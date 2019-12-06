@@ -1,0 +1,22 @@
+.visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.u-underline {
+  text-decoration: underline;
+}
+
+.u-link {
+  color: $color-black;
+  box-shadow: inset 0 -3px 0 0 rgba($color-brand-primary, 0.3);
+  font-weight: bold;
+  transition: 0.3s ease-out;
+
+  &:hover {
+    color: $color-brand-primary;
+  }
+}

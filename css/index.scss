@@ -1,0 +1,77 @@
+@import "settings/all";
+
+@import "tools/all";
+
+@import "generic/generic.box-sizing";
+@import "generic/generic.reset";
+@import "generic/generic.shared";
+
+@import "elements/elements.page";
+
+@import "components/components.nav";
+
+@import "scopes/scopes.article";
+
+@import "syntax";
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+@media (min-width: 1170px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+.c-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 320px;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+  background: #27739a url("../img/hero-bg.png");
+  background-blend-mode: multiply;
+}
+
+.c-header__title {
+  color: inherit;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.c-header__subline {
+  margin-bottom: 1.5rem;
+}
+
+aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: #eff4f7;
+  overflow-y: scroll;
+
+  h2 {
+    margin: 1rem 0 0 1rem;
+    color: $color-brand-primary;
+  }
+}
+
+.content {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.content img {
+  display: block;
+  max-width: 100%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+

@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  #HEALTHCHECK
+\*------------------------------------*/
+
+$outline-width: 5px;
+
+@if (config(healthcheck) == true) {
+
+    /**
+     * Highlight types of class to visually see the makeup of our UIs.
+     */
+    [class^="o-"],
+    [class*=" o-"] {
+        outline: $outline-width solid orange;
+    }
+
+    [class^="c-"],
+    [class*=" c-"] {
+        outline: $outline-width solid cyan;
+    }
+
+    [class^="u-"],
+    [class*=" u-"] {
+        outline: $outline-width solid violet;
+    }
+
+    [class^="_"],
+    [class*=" _"] {
+        outline: $outline-width solid red;
+    }
+
+}

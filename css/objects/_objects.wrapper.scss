@@ -1,0 +1,10 @@
+.o-wrapper {
+	padding-left: 1em;
+	padding-right: 1em;
+	max-width: 820px;
+	margin: auto;
+
+	> p {
+		max-width: 900px;
+	}
+}

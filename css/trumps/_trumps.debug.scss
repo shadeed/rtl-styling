@@ -1,0 +1,104 @@
+/*------------------------------------*\
+  #DEBUG
+\*------------------------------------*/
+
+// Define styles for errors and warns that we can reuse throughout this file.
+
+@mixin debug-warn() {
+  outline: 5px solid yellow;
+}
+
+@mixin debug-error() {
+  outline: 5px solid red;
+}
+
+
+
+
+
+@if (config(debug) == true) {
+
+
+
+
+
+  /**
+   * Images missing `alt` attributes is an error. Empty `alt` attributes are
+   * allowed; perhaps we need to do that…?
+   */
+  img:not([alt]) {
+    @include debug-error();
+  }
+
+
+
+
+
+  /**
+   * Using a layout item outside of a layout context is a definite error.
+   */
+  .o-layout__item {
+    @include debug-error();
+
+    .o-layout & {
+      outline: none;
+    }
+
+  }
+
+  /**
+   * Having something other than a layout item directly inside a layout context
+   * is an error.
+   */
+  .o-layout > :not(.o-layout__item) {
+    @include debug-error();
+  }
+
+
+
+
+
+  /**
+   * Warn about links pointing to just `#`; it’s usually better to point them to
+   * `#0` if we have to point to `#` at all.
+   */
+  [href="#"] {
+    @include debug-warn();
+  }
+
+
+
+
+
+  /**
+   * Elements other than `LI` directly inside lists are not allowed.
+   */
+  ul,
+  ol {
+
+    > :not(li) {
+      @include debug-error();
+    }
+
+  }
+
+  /**
+   * `LI`s outside of lists aren’t allowed either.
+   */
+  li {
+    @include debug-error();
+  }
+
+  ul, ol {
+
+    > li {
+      outline: none;
+    }
+
+  }
+
+
+
+
+
+}

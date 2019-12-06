@@ -1,0 +1,90 @@
+///*----------------------------------*\
+//  #TYPOGRAPHY
+//\*----------------------------------*/
+
+// Mixins to help generating typographical rules.
+
+
+
+// Shorthand onto specific font-stacks.
+@mixin font-family($family) {
+    @if ($family == "base") {
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    @else {
+        @warn "#{$family} is not a valid font-family."
+    }
+}
+
+
+
+
+
+// Generate a font-size and baseline-compatible line-height.
+@mixin font-size($font-size, $line-height: auto) {
+    font-size: ($font-size / $global-font-size) * 1rem;
+
+    @if $line-height == auto {
+        line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
+    }
+
+    @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        }
+
+        @elseif ($line-height != none and $line-height != false) {
+            @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+        }
+
+    }
+
+}
+
+
+
+
+
+// Map keywords onto our numbered weights for convenience.
+@mixin font-weight($weight) {
+
+    @if ($weight == normal) {
+        font-weight: 400;
+    }
+
+    @elseif ($weight == bold) {
+        font-weight: 700;
+    }
+
+    @elseif ($weight == black) {
+        font-weight: 900;
+    }
+
+    @else {
+        @warn "#{$weight} is not a valid font-weight."
+    }
+
+}
+
+
+
+
+
+// Simple truncation mixin to cut off text using an ellipsis after a certain
+// width.
+//
+// .simple-usage {
+//   @include truncate();
+// }
+//
+// .detailed-usage {
+//   @include truncate(<value>);
+// }
+@mixin truncate($width: 100%) {
+  max-width: $width;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

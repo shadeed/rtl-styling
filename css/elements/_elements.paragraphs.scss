@@ -1,0 +1,20 @@
+/*------------------------------------*\
+  #PARAGRAPHS
+\*------------------------------------*/
+
+/**
+ * Basic styling for paragraphs.
+ */
+
+p {
+    color: $color-grey;
+    line-height: 1.55;
+
+    @include mq($from: medium) {
+      @include font-size(20px, 1.6);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-black);
+    }
+}

@@ -1,0 +1,38 @@
+///*----------------------------------*\
+//  #Print Stylesheets
+//\*----------------------------------*/
+
+@page {
+  size: A4;
+}
+
+@page:left {
+  margin-left: 2cm;
+}
+
+@page:right {
+  margin-left: 2cm;
+}
+
+@media print {
+    * {
+        color: #000;
+    }
+    
+    header, footer {
+        display: none;
+    }
+
+    .header-artwork {
+        display: none;
+    }
+
+    h2 {
+        margin-bottom: 0.5cm;
+    }
+
+    h1 {
+        page-break-before: always;
+    }
+}
+

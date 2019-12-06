@@ -1,0 +1,40 @@
+///*----------------------------------*\
+//  #GLOBAL
+//\*----------------------------------*/
+
+// Project-level settings and setup.
+
+// Base typographical styles and baseline grid.
+$global-font-size: 16px;
+$global-line-height: 16px;
+
+$base-font-family: 'Heebo';
+$body-font: 'Merriweather', Arial;
+
+$base-font-weight: 400;
+$font-weight-regular: 300;
+$font-weight-bold: 700;
+
+// Standardise some UI treatments.
+$global-radius:       4px;
+$global-transition:   0.25s;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+//                               W A R N I N G                                //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+// Private/framework-only reassignment. Do not alter anything below.
+$global-spacing-unit:       round($global-line-height);
+$global-spacing-unit-tiny:  round($global-spacing-unit / 4);
+$global-spacing-unit-small: round($global-spacing-unit / 2);
+$global-spacing-unit-middle: round($global-spacing-unit * 1.5);
+$global-spacing-unit-large: round($global-spacing-unit * 2);
+$global-spacing-unit-huge:  round($global-spacing-unit * 4);
+
+
+@if ($global-spacing-unit != $global-line-height) {
+  @error "The value of `$global-spacing-unit` must not be changed.";
+}

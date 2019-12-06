@@ -2,8 +2,107 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
 
-{{ content | safe }}
+<header class="c-header">
+    <h1 class="c-header__title">RTL Styling 101</h1>
+    <p class="c-header__subline">
+    An extensive guide on how to style for RTL in CSS
+    </p>
+    <p>By <img src="" alt="" /> Ahmad Shadeed</p>
+</header>
 
-<p><a href="{{ '/' | url }}">← Home</a></p>
+<div class="wrapper">
+    <aside>
+    <h2>Table of Contents</h2>
+    <nav class="c-nav">
+        <ul class="">
+        <li>
+            <a href="#introduction-to-rtl-styling"
+            >Introduction To RTL Styling
+            </a>
+        </li>
+        <li>
+            <a href="#basic-example-of-flipping-a-design"
+            >Basic Example Of Flipping A Design</a
+            >
+        </li>
+        <li>
+            <a href="#mixing-english-and-arabic-content-in-an-ltr-layout"
+            >Mixing English and Arabic Content</a
+            >
+        </li>
+        <li><a href="#flexbox-layout-module">Flexbox Layout Module</a></li>
+        <li><a href="#grid-layout-module">Grid Layout Module</a></li>
+        <li>
+            <a href="#common-mistakes-when-flipping-to-rtl"
+            >Common Mistakes When Flipping to RTL</a
+            >
+            <ul>
+            <li><a href="#1-letter-spacing">Letter Spacing</a></li>
+            <li><a href="#2-text-transparency">Text Transparency</a></li>
+            <li>
+                <a href="#3-differences-in-words-size-between-languages"
+                >Differences In Words Size Between Languages</a
+                >
+            </li>
+            <li>
+                <a href="#5-picking-a-bad-rtl-font">Picking a Bad RTL Font</a>
+            </li>
+            <li>
+                <a href="#6-mixing-hindi-and-arabic-numerals"
+                >Mixing Hindi and Arabic Numerals</a
+                >
+            </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#common-things-that-might-not-work-for-rtl"
+            >Common Things That Might Not Work For RTL</a
+            >
+            <ul>
+            <li><a href="#1-line-height">Line Height</a></li>
+            <li>
+                <a href="#2-links-underline">Links Underline</a>
+                <ul>
+                <li><a href="#21-text-decoration">Text Decoration</a></li>
+                <li><a href="#22-box-shadow">Box Shadow</a></li>
+                </ul>
+            </li>
+            <li><a href="#3-line-break">Line Break</a></li>
+            <li><a href="#4-words-shortcuts">Words Shortcuts</a></li>
+            </ul>
+        </li>
+        <li><a href="#bidirectional-icons">Bidirectional Icons</a></li>
+        <li><a href="#flipping-a-component">Flipping A Component</a></li>
+        <li>
+            <a href="#rtl-design-considerations">RTL Design Considerations</a>
+            <ul>
+            <li><a href="#button-icons">Button Icons</a></li>
+            <li><a href="#form-inputs">Form Inputs</a></li>
+            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+            <li><a href="#page-header">Page Header</a></li>
+            <li><a href="#tabs">Tabs</a></li>
+            <li><a href="#card">Card</a></li>
+            <li><a href="#toast">Toast</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#css-logical-properties">CSS Logical Properties </a>
+        </li>
+        <li><a href="#css-naming-convention">CSS Naming Convention</a></li>
+        <li>
+            <a href="#automation-tools">Automation Tools</a>
+            <ul>
+            <li><a href="#1-bi-app-sass">Bi-App-Sass</a></li>
+            <li><a href="#2-rtlcss">RTLCSS</a></li>
+            </ul>
+        </li>
+        </ul>
+    </nav>
+    </aside>
+    <main>
+    <div class="content post-content">
+        {{ content | safe }}
+    </div>
+    </main>
+</div>

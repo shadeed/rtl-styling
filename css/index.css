@@ -120,15 +120,24 @@ html {
   line-height: 1.65;
 }
 .c-nav a {
-  font-size: 1rem;
+  font-size: 15px;
   color: #555555;
   text-decoration: none;
 }
 .c-nav a:hover {
   color: #3863d9;
 }
+.c-nav a.current {
+  font-weight: bold;
+  color: red;
+}
 .c-nav li ul {
   margin-left: 1.5rem;
+}
+
+.c-nav__item li a,
+.c-nav__item ul a {
+  font-size: 14px;
 }
 
 .direct-link {
@@ -680,10 +689,10 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 1000px) {
   .wrapper {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 310px 1fr;
   }
 }
 .c-header {
@@ -710,15 +719,20 @@ body {
 }
 
 aside {
-  position: sticky;
-  top: 0;
-  height: 100vh;
   background: #eff4f7;
-  overflow-y: scroll;
 }
 aside h2 {
   margin: 1rem 0 0 1rem;
   color: #3863d9;
+  font-size: 20px;
+}
+@media (min-width: 1000px) {
+  aside {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: scroll;
+  }
 }
 
 .content {

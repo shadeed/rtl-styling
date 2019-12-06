@@ -533,4 +533,4 @@ This tool is automated and converts things automatically. I haven't used it but 
 - [Right-to-Left Development: Tips and Tricks](https://steelkiwi.com/blog/right-left-development-tips-and-tricks/)
 - [Arabic numerals](https://en.wikipedia.org/wiki/Arabic_numerals)
 
-<script async src="https://static.codepen.io/../../img/embed/ei.js"></script>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>

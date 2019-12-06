@@ -9,7 +9,7 @@
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
   <body>
-    <header>
+    <!-- <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
       {#- Read more about `eleventy-navigation` at https://github.com/11ty/eleventy-navigation #}
@@ -19,7 +19,7 @@
         activeListItemClass: "nav-item-active",
         activeKey: eleventyNavigation.key
       }) | safe }}
-    </header>
+    </header> -->
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}

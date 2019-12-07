@@ -214,6 +214,9 @@
 		line-height: 1.45;
 		overflow-y: scroll;
 		border-radius: $global-radius;
+	}
+
+	pre[class*="language-"] {
 		margin-bottom: 1.5rem;
 	}
 

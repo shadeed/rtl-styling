@@ -350,6 +350,8 @@ html {
   line-height: 1.45;
   overflow-y: scroll;
   border-radius: 4px;
+}
+.post-content pre[class*=language-] {
   margin-bottom: 1.5rem;
 }
 @media (min-width: 720px) {

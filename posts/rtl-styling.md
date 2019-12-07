@@ -546,6 +546,26 @@ And since CSS Flexbox works based on the direction of the page as explained prev
 
 ![](../../img/header-skeleton-2.png)
 
+Next thing is the divider line between the logo and navigation. At first glance, I thought about using `border-right`. It work, but not ideal. Using pseudo elements is better since they can flip based on the page direction.
+
+![](../../img/before-after.png)
+
+```scss
+.c-brand:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 3px;
+  height: 38px;
+  border-radius: 5px;
+  background: #e4e4e4;
+  margin-inline-start: 1.25rem;
+}
+```
+
+Here is the current result:
+![](../../img/header-initial.png)
+
 <!-- ![](../../img/blog--header.png) -->
 
 ## Resources and Related Articles

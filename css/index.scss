@@ -48,6 +48,27 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.c-header__byline {
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+    border: 1px solid #fff;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 aside {
   background: #eff4f7;
 

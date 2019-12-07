@@ -108,8 +108,7 @@
 	blockquote {
 	  margin-bottom: $global-spacing-unit;
 	  padding: 10px;
-	  background: #f7f7f7;
-	  border-radius: $global-radius;
+	  border-left: 4px solid #e4e4e4;
 	  
 	  p {
 		  margin-bottom: 0;
@@ -215,6 +214,7 @@
 		line-height: 1.45;
 		overflow-y: scroll;
 		border-radius: $global-radius;
+		margin-bottom: 1.5rem;
 	}
 
 	@media (min-width: 720px) {

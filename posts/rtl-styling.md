@@ -1,6 +1,5 @@
 ---
-title: RTL Styling
-description: This is a post on My Blog about agile frameworks.
+title: Right-to-left Styling
 date: 2018-05-01
 layout: layouts/post.njk
 ---
@@ -524,6 +523,30 @@ Though the last commit in the Github repo was 4 years ago (Nov 2015).
 > [RTLCSS](https://rtlcss.com/) is a Framework for converting Left-To-Right (LTR) Cascading Style Sheets(CSS) to Right-To-Left (RTL)
 
 This tool is automated and converts things automatically. I haven't used it but it looks good.
+
+## Practical Examples (WIP)
+### Example 1
+I designed a layout specially for the goal of showing you how I would approach and think about flipping it to a Right-to-left layout.
+
+![](../../img/blog.png)
+
+Let's start with the header component. To code it properly, I outlined a general skeleton for the header. Notice that I divided the header into main and subsections. Also, I added start and end classes for the sections.
+
+![](../../img/header-skeleton-1.png)
+
+```css
+.header__main,
+.header__sub {
+    display: flex;
+    justify-content: space-between;
+}
+```
+
+And since CSS Flexbox works based on the direction of the page as explained previously in this guide, it will flip automatically for RTL.
+
+![](../../img/header-skeleton-2.png)
+
+<!-- ![](../../img/blog--header.png) -->
 
 ## Resources and Related Articles
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)

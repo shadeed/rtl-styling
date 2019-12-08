@@ -630,6 +630,8 @@ But animating margins is not good for performance. Though, it works. The other s
 }
 ```
 
+Notice that for RTL, I added `scaleX(-1)` to flip the arrow icon horizontally. I can also use `rotate(180deg)` but the scale is more straightforward to me.
+
 ![](../../img/see-all.gif)
 
 Next is the search input. Here are the requirements of it:

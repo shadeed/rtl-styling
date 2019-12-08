@@ -643,7 +643,7 @@ Next is the search input. Here are the requirements of it:
 }
 
 .c-header[dir="rtl"] .c-input--search {
-  /* I used a flipped search icon replaced the original one */
+  /* I replaced the original icon with a flipped one */
   background-image: url("data:image/svg+xml...");
   background-position: right 6px center;
 }
@@ -658,6 +658,9 @@ Also, when typing into the search box, the text shouldn't go under the icon. To 
   padding-inline-end: 32px;
 }
 ```
+
+Here is the current coding result for both LTR and RTL:
+![](../../img/header-current-result.png)
 
 ## Resources and Related Articles
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)

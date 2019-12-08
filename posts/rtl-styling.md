@@ -597,8 +597,8 @@ It might seems simple at first, but there are multiple padding and margins that 
 ```
 
 As you see, I used CSS Logical properties instead of `left` and `right`. Next step is the "See All" link. Notice that there is an arrow at the end of it. Below are the requirements for it:
-- The arrow color should be changed on hover
-- The arrow should be translated to the right on hover
+- The arrow color should be changed on hover.
+- The arrow should be translated to the right on hover.
 
 I chose to use inline SVG for that purpose. When I tried to add a translate animation to the arrow, I thought about RTL. There is no logical property for it and I need to explore other solutions. The one that I got is animating margins.
 
@@ -631,6 +631,33 @@ But animating margins is not good for performance. Though, it works. The other s
 ```
 
 ![](../../img/see-all.gif)
+
+Next is the search input. Here are the requirements of it:
+- An icon placed at the end of the input.
+- The placement of the search icon is dynamic.
+
+```css
+.c-input--search {
+  background-image: url("data:image/svg+xml...");
+  background-position: right 6px center;
+}
+
+.c-header[dir="rtl"] .c-input--search {
+  /* I used a flipped search icon replaced the original one */
+  background-image: url("data:image/svg+xml...");
+  background-position: right 6px center;
+}
+```
+
+Also, when typing into the search box, the text shouldn't go under the icon. To avoid that, padding should be added either on the right or left sides.
+
+![](../../img/input-padding.png)
+
+```css
+.c-input {
+  padding-inline-end: 32px;
+}
+```
 
 ## Resources and Related Articles
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)

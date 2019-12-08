@@ -566,7 +566,71 @@ Next thing is the divider line between the logo and navigation. At first glance,
 Here is the current result:
 ![](../../img/header-initial.png)
 
-<!-- ![](../../img/blog--header.png) -->
+Next, I'll work on the topic component (The one in the sub header with a label and a counter). Here is a design mockup of how the topic component should look in LTR and RTL. Notice that the counter placement is different.
+
+![](../../img/topics.png)
+
+It might seems simple at first, but there are multiple padding and margins that needs to be handled between LTR and RTL. Here is a mockup illustrating that:
+
+![](../../img/topics-p-m.png)
+
+```css
+.topics-heading {
+	margin-inline-end: 1.5rem;
+}
+
+.topics-list {
+	margin-inline-end: 1rem;
+}
+
+.c-topic {
+	padding-inline-start: 0.5rem;
+}
+
+.c-topic:not(:last-child) {
+	margin-inline-end: 10px;
+}
+
+.c-topic__counter {
+	margin-inline-start: 1rem;
+}
+```
+
+As you see, I used CSS Logical properties instead of `left` and `right`. Next step is the "See All" link. Notice that there is an arrow at the end of it. Below are the requirements for it:
+- The arrow color should be changed on hover
+- The arrow should be translated to the right on hover
+
+I chose to use inline SVG for that purpose. When I tried to add a translate animation to the arrow, I thought about RTL. There is no logical property for it and I need to explore other solutions. The one that I got is animating margins.
+
+```css
+.c-link svg {
+	margin-inline-start: 4px;
+	transition: 0.15s ease-in;
+}
+
+.c-link:hover svg {
+	margin-inline-start: 8px;
+}
+```
+
+But animating margins is not good for performance. Though, it works. The other solution is to detect the page direction and use `translate` based on that.
+
+```css
+.c-link:hover svg {
+  transform: translateX(6px);
+}
+
+/* I'm using dir=rtl on the header for explaining purposes. It should be added to the root element */
+.c-header[dir="rtl"] .c-link svg {
+  transform: scaleX(-1);
+}
+
+.c-header[dir="rtl"] .c-link:hover svg {
+  transform: scaleX(-1) translateX(6px);
+}
+```
+
+![](../../img/see-all.gif)
 
 ## Resources and Related Articles
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)

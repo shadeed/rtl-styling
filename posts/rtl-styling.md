@@ -524,8 +524,8 @@ Though the last commit in the Github repo was 4 years ago (Nov 2015).
 
 This tool is automated and converts things automatically. I haven't used it but it looks good.
 
-## Practical Examples (WIP)
-### Example 1
+## Practical Examples
+### Website Header
 I designed a layout specially for the goal of showing you how I would approach and think about flipping it to a Right-to-left layout.
 
 ![](../../img/blog.png)
@@ -661,8 +661,13 @@ Also, when typing into the search box, the text shouldn't go under the icon. To 
 }
 ```
 
-Here is the current coding result for both LTR and RTL:
+Here is the current result for both LTR and RTL:
 ![](../../img/header-current-result.png)
+
+Next step, is the mobile menu. I will use a hamburger icon to represent the menu. The placement of the icon will change between LTR and RTL. The same applies for the direction of the translate animation.
+![](../../img/header-menu-mobile.png)
+
+Check out the [Demo](https://codepen.io/shadeed/pen/aa0c9f6c73fe62d206b674c52dc4426e?editors=0100) on CodePen
 
 ## Resources and Related Articles
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)

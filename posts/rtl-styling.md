@@ -481,11 +481,11 @@ There is a search input with a search icon on the right. I should add padding fo
 
 ![](../../img/css-logical-margin.png)
 
-The margin on the right side of the avatar needs to be logical, so I used the `margin-inline-end` for that purpose.
+The margin on the right side of the avatar needs to be logical, so I used the `margin-inline-start` for that purpose.
 
 ```css
 .page-header__avatar {  
-  margin-inline-end: 1rem;
+  margin-inline-start: 1rem;
 }
 ```
 

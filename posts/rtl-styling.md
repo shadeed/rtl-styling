@@ -21,7 +21,7 @@ Notice for RTL, the text reads from Right to Left, which is the opposite for LTR
 
 When the `dir` is changed, the following elements should be flipped automatically by default: Headings, Paragraphs, Links, Images, and Form Elements.
 
-It's worth mentioning that there is a `dir="auto"` which switch the direction automatically based on the content parsed. According to the HTML spec:
+It's worth mentioning that there is a `dir="auto"` which switch the direction automatically based on the content parsed. According to the [HTML](https://www.w3.org/TR/2011/WD-html5-author-20110809/global-attributes.html) spec:
 > Authors are urged to only use this value as a last resort when the direction of the text is truly unknown, and no better server-side heuristic can be applied.
 
 <p class="codepen" data-height="428" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="7662a5f048c5a6a1bbdb89905327c965" style="height: 428px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Basic Example">
@@ -124,7 +124,7 @@ When `dir="rtl` is set on the element, the title is much clearer. In other words
 ## Flexbox Layout Module
 Flexbox is based on the writing mode of the document. The writing mode is used to specify how blocks are laid out on a page. For example, a Chinese website is laid from top to bottom. Writing mode is for that purpose. In Flexbox, items are distributed based on the writing mode of the document. The default value for `writing-mode` in English and Arabic is `horizontal-tb`
 
-According to MDN, `horizontal-tb` means the following:
+According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode), `horizontal-tb` means the following:
 > Content flows horizontally from left to right, vertically from top to bottom. The next horizontal line is positioned below the previous line.
 
 When the page direction is changed to RTL, Flexbox will flip its items accordingly. That's a huge benefit! Below is an illustration that shows how the Flexbox axis is flipped based on the direction.
@@ -235,6 +235,8 @@ The button "Done" is translated to "تم" in Arabic which makes the button too s
 
 And here is a very similar example from Twitter:
 ![](../../img/word-length-twitter.png)
+
+Please note that the above issues from Linkedin and Twitter has been spotted at the time of writing this article (13 Dec 2019).
 
 ### 4) Text Truncation
 In the past, I worked on a project with mixed content and I faced an issue related to truncated in the wrong direction. Consider the following example.
@@ -430,7 +432,7 @@ As you might expect, close and warning icons are flipped.
 ![](../../img/toasts.png)
 
 ## CSS Logical Properties
-According to MDN:
+According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties):
 > CSS Logical Properties and Values is a module of CSS introducing logical properties and values that provide the ability to control layout through logical, rather than physical, direction and dimension mappings.
 
 Let's take a simple example. I need to align a text to the left, so I added the following.
@@ -526,6 +528,19 @@ The support is quite good padding, margin, and text-align. However, It's not goo
 
 ![Support for CSS Logical Properties from Can I Use Website](../../img/caniuse-css-logical-2.png)
 
+Even though the support is not 100% perfect (And it won't be 100%, ever). I advise you to use them with a fallback method. For example:
+
+```css
+.input--search {  
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 2.5rem;
+}
+```
+
+To make things easier, you can use [PostCSS Logical](https://github.com/csstools/postcss-logical) plugin that add fallbacks for each logical property used.
+
 <!-- ```css
 .nav-item {
     margin-left: 16px;
@@ -574,7 +589,7 @@ Instead of naming the elements with a presentational names like `.c-page-header_
 There are great tools that make our job easier when we need a way to flip a design from LTR to RTL.
 
 ### 1) bi-app-sass
-> [bi-app](https://github.com/anasnakawa/bi-app-sass) lets you write your stylesheets once, and have them compiled into 2 different stylesheets one for left-to-right layout, and the other for right-to-left layouts
+[bi-app](https://github.com/anasnakawa/bi-app-sass) by Anas Nakawa lets you write your stylesheets once, and have them compiled into 2 different stylesheets one for left-to-right layout, and the other for right-to-left layouts
 
 This tool is useful for a large project. The result will be multiple stylesheets for each direction (LTR, RTL). Consider the following:
 ```sass
@@ -607,9 +622,9 @@ The resulted CSS will be as below:
 Though the last commit in the Github repo was 4 years ago (Nov 2015).
 
 ### 2) RTLCSS
-> [RTLCSS](https://rtlcss.com/) is a Framework for converting Left-To-Right (LTR) Cascading Style Sheets(CSS) to Right-To-Left (RTL)
+[RTLCSS](https://rtlcss.com/) by Mohammad Younes is a Framework for converting Left-To-Right (LTR) to Right-To-Left (RTL) stylesheets.
 
-This tool is automated and converts things automatically. I haven't used it but it looks good.
+The difference in this tool is that it can only run on the build version of a CSS file. For example, if you have a project with 50+ Sass components, RTLCSS will come in handy to parse the compiled CSS file and create an RTL version of it. 
 
 ## Practical Examples
 ### Website Header
@@ -755,6 +770,9 @@ Next step, is the mobile menu. I will use a hamburger icon to represent the menu
 ![](../../img/header-menu-mobile.png)
 
 Check out the [Demo](https://codepen.io/shadeed/pen/aa0c9f6c73fe62d206b674c52dc4426e?editors=0100) on CodePen
+
+## Thanks
+Special thanks to my wife [Kholoud](https://twitter.com/kholoud840) for her continuous support and reading the guide multiple times. Thanks to both [Adebiyi Adedotun Lukman](https://twitter.com/AdebiyiAL) and [Šime Vidas](https://twitter.com/simevidas) for their amazing feedback.
 
 ## Resources and Related Articles
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)

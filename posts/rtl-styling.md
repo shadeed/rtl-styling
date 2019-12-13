@@ -6,9 +6,7 @@ layout: layouts/post.njk
 
 ![](../../img/rtl-styling-intro@2x.jpg)
 
-There are 292+m people around the world that speak Arabic as their first language. Arabic (al-Arabiyyah) is my native language, and I sometimes build websites that need to support both LTR(Left to Right) and RTL(Right to Left) styles.
-
-It's pronounced like that: /al ʕarabijja/, /ʕarabiː/. Play this sound to hear me pronounce it.
+There are 292+m people around the world that speak Arabic as their first language. Arabic (al-Arabiyyah) is my native language, and I sometimes build websites that need to support both LTR(Left to Right) and RTL(Right to Left) styles. It's pronounced like that: /al ʕarabijja/, /ʕarabiː/.
 
 ## Introduction to RTL styling
 The default page direction in CSS is LTR. If you check a browser of your choice and inspect the default browser agent styles for the `html` element, you will notice that LTR is the default value for `direction` property. Below is a basic example to show the difference between a Left to Right (LTR) and a Right to Left (RTL) layout.
@@ -152,9 +150,9 @@ In the below example, I laid out three items and numbered each of them to see th
 
 ![](../../img/rtl-flexbox-1.jpg)
 
-<p class="codepen" data-height="561" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="02f4dccfb898bee7d1e1daa71f3bd6ac" style="height: 561px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Test 2">
-  <span>See the Pen <a href="https://codepen.io/shadeed/pen/02f4dccfb898bee7d1e1daa71f3bd6ac">
-  RTL Styling - Test 2</a> by Ahmad Shadeed (<a href="https://codepen.io/shadeed">@shadeed</a>)
+<p class="codepen" data-height="428" data-theme-id="dark" data-default-tab="result" data-user="shadeed" data-slug-hash="76082ed22d043f1ebcdcf1037dda13f2" style="height: 428px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Test 3">
+  <span>See the Pen <a href="https://codepen.io/shadeed/pen/76082ed22d043f1ebcdcf1037dda13f2">
+  RTL Styling - Test 3</a> by Ahmad Shadeed (<a href="https://codepen.io/shadeed">@shadeed</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
@@ -435,11 +433,100 @@ As you might expect, close and warning icons are flipped.
 According to MDN:
 > CSS Logical Properties and Values is a module of CSS introducing logical properties and values that provide the ability to control layout through logical, rather than physical, direction and dimension mappings.
 
-Whats I'm interested to shed light on is the margin, padding and borders properties. I won't dig deep into that since it's out of the scope of this article.
+Let's take a simple example. I need to align a text to the left, so I added the following.
+```css
+.page-header {
+    text-align: right;
+}
+```
 
-Let's take a very simple example. I need to have a space between navigation links in a header, so I added the following.
+And for RTL:
+```css
+[dir="rtl"] .nav-item {
+    text-align: left;
+}
+```
+
+What if there is a way to add one `text-align` value that change the direction based on the page direction? CSS Logical Properties to the rescue!
 
 ```css
+.page-header {
+    text-align: end;
+}
+```
+
+By having that, the direction of `text-align` will be based on the page. [Demo](https://codepen.io/shadeed/pen/fb4e2f89ca23ab53f8b37112f027c85b?editors=1100)
+
+To make it easy to imagine the difference between `start` and `end`, I made the below mockup that shows that. The value `start` is equal to left in LTR and `end` is Right for RTL. The same applies for `end` as well.
+
+![](../../img/start-end.png)
+
+Now that you got a basic idea about how it works. Let's explore more examples and use cases for CSS Logical Properties.
+
+### Logical Padding
+![](../../img/css-logical-padding.png)
+
+There is a search input with a search icon on the right. I should add padding for both left and right. The padding on the right is a bit bigger to avoid text being below the search icon.
+
+```css
+.input--search {  
+  padding-inline-start: 1rem;
+  padding-inline-end: 2.5rem;
+}
+```
+
+### Logical Margin
+
+![](../../img/css-logical-margin.png)
+
+The margin on the right side of the avatar needs to be logical, so I used the `margin-inline-end` for that purpose.
+
+```css
+.page-header__avatar {  
+  margin-inline-end: 1rem;
+}
+```
+
+### Logical Borders
+![](../../img/css-logical-border.png)
+
+Often times, you might need to add a border as a way of indicating that a navigation element is active. In the design above, there is a border on the left side of each navigation element. How to make it logical?
+
+```css
+.nav__item {  
+  border-inline-start: 3px solid transparent;
+}
+
+.nav__item.is-active {
+  border-color: #1e9ada;
+}
+```
+
+### Logical Border Radius
+![](../../img/css-logical-border-radius.png)
+
+In the above design, the navigation element background has a border radius only for the top-right and bottom-right corners. In order to that logically, I used the following:
+
+```css
+.nav__item {  
+  border-start-end-radius: 30px;
+  border-end-end-radius: 30px;
+  background-color: transparent;
+}
+
+.nav__item.is-active {
+  background-color: #ecf6fb;
+}
+```
+
+### Browser Support
+The support is quite good padding, margin, and text-align. However, It's not good for the border radius properites. Here are the support tables from [Can I Use](https://caniuse.com/).
+
+![Support for CSS Logical Properties from Can I Use Website](../../img/caniuse-css-logical.png)
+
+![Support for CSS Logical Properties from Can I Use Website](../../img/caniuse-css-logical-2.png)
+
+<!-- ```css
 .nav-item {
     margin-left: 16px;
 }
@@ -460,7 +547,7 @@ What if there is a one-line that will change the margin direction based on the l
 }
 ```
 
-By having that, the margin will change automatically based on the direction of the page. If you want to dig more into that, here is a great [article](https://adrianroselli.com/2019/11/css-logical-properties.html) by Adrian Roselli.
+By having that, the margin will change automatically based on the direction of the page. If you want to dig more into that, here is a great [article](https://adrianroselli.com/2019/11/css-logical-properties.html) by Adrian Roselli. -->
 
 ## CSS Naming Convention
 In general, avoid naming CSS classes with names that are too attached to the element. Use a name that can be extracted to a reusable component. Consider the following:

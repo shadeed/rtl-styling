@@ -6,28 +6,11 @@
  * Page-level styling (e.g. HTML and BODY elements).
  */
 
-:root {
-    --bg-color-line: #cbcbcb;
-    --bg-color-page: #19223e;
-    --color-black: #555555;
-    --color-brand-primary: #3863d9;
-    --bg-footer-1: #BBDEEA;
-    --bg-footer-2: #EAFDFC;
-
-    @media (prefers-color-scheme: dark) {
-        --bg-color-line: #364784;
-        --color-black: #cecece;
-        --color-brand-primary: #829CE8;
-        --bg-footer-1: #040606;
-        --bg-footer-2: #123844;
-    }
-}
-
 html {
     font-size: ($global-font-size / 16px) * 1em;
     line-height: $global-line-height / $global-font-size;
     @include font-family(base);
-    scroll-behavior: smooth;
+    //scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 

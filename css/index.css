@@ -83,29 +83,10 @@ textarea {
 /**
  * Page-level styling (e.g. HTML and BODY elements).
  */
-:root {
-  --bg-color-line: #cbcbcb;
-  --bg-color-page: #19223e;
-  --color-black: #555555;
-  --color-brand-primary: #3863d9;
-  --bg-footer-1: #BBDEEA;
-  --bg-footer-2: #EAFDFC;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color-line: #364784;
-    --color-black: #cecece;
-    --color-brand-primary: #829CE8;
-    --bg-footer-1: #040606;
-    --bg-footer-2: #123844;
-  }
-}
-
 html {
   font-size: 1em;
   line-height: 1;
   font-family: "IBM Plex Sans", sans-serif;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -166,12 +147,12 @@ html {
 .post-content h2 {
   font-size: 26px;
   margin-bottom: 32px;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .post-content h3 {
   font-weight: 500;
   margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .post-content h1 {
   color: #3863d9;
@@ -395,7 +376,7 @@ html {
 
 .post-author {
   text-align: center;
-  border-top: 2px solid #D8D8D8;
+  border-top: 2px solid #d8d8d8;
   padding-top: 16px;
   margin-top: 32px;
 }

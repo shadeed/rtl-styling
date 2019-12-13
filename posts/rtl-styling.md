@@ -521,6 +521,15 @@ In the above design, the navigation element background has a border radius only 
 }
 ```
 
+### Logical Properties Cheatsheet
+When in doubt, use the below cheatsheet to see what's the logical equivalent of a directional CSS property. Please note that the properties included are limited to what useful for LRT/RTL. I made it based on a great [article](https://adrianroselli.com/2019/11/css-logical-properties.html) by Adrian Roselli.
+
+<p class="codepen" data-height="674" data-theme-id="dark" data-default-tab="result" data-user="shadeed" data-slug-hash="2981e62691e67452d9f282a5351d7c79" style="height: 674px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Logical Properties">
+  <span>See the Pen <a href="https://codepen.io/shadeed/pen/2981e62691e67452d9f282a5351d7c79">
+  CSS Logical Properties</a> by Ahmad Shadeed (<a href="https://codepen.io/shadeed">@shadeed</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+
 ### Browser Support
 The support is quite good padding, margin, and text-align. However, It's not good for the border radius properites. Here are the support tables from [Can I Use](https://caniuse.com/).
 
@@ -539,30 +548,7 @@ Even though the support is not 100% perfect (And it won't be 100%, ever). I advi
 }
 ```
 
-To make things easier, you can use [PostCSS Logical](https://github.com/csstools/postcss-logical) plugin that add fallbacks for each logical property used.
-
-<!-- ```css
-.nav-item {
-    margin-left: 16px;
-}
-```
-
-And for RTL:
-```css
-[dir="rtl"] .nav-item {
-    margin-right: 16px;
-}
-```
-
-What if there is a one-line that will change the margin direction based on the language? There you go with CSS Logical Properties!
-
-```css
-.nav-item {
-    margin-inline-end: 16px;
-}
-```
-
-By having that, the margin will change automatically based on the direction of the page. If you want to dig more into that, here is a great [article](https://adrianroselli.com/2019/11/css-logical-properties.html) by Adrian Roselli. -->
+Also, you can use [PostCSS Logical](https://github.com/csstools/postcss-logical) plugin that add fallbacks for each logical property used.
 
 ## CSS Naming Convention
 In general, avoid naming CSS classes with names that are too attached to the element. Use a name that can be extracted to a reusable component. Consider the following:

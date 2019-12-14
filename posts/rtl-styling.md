@@ -416,6 +416,11 @@ A page header component contains a start and end sections. Each one of them will
 
 ![](../../img/page-header.png)
 
+### Tables
+A table should be flipped when in RTL style.
+
+![](../../img/tables.png)
+
 ### Tabs
 For a tabs component, the icons are on the left of the label in LTR. In RTL, this should be flipped.
 

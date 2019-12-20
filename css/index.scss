@@ -41,6 +41,25 @@ body {
   }
 }
 
+.c-header--full {
+  color: #464d4e;
+  background: #fafafa url("../img/hero-bg.png");
+  min-height: 100vh;
+
+  .c-header__byline {
+    margin-bottom: 1.5rem;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .c-button {
+    min-width: 160px;
+    align-self: center;
+  }
+}
+
 .c-header__title {
   color: inherit;
   font-size: 24px;

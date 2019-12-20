@@ -128,17 +128,27 @@ html {
   opacity: 0.6;
 }
 
-.c-nav__open,
-.c-nav__close {
+.c-button {
   appearance: none;
   background: #1d92d5;
   color: #fff;
-  display: block;
-  width: 100%;
+  display: inline-block;
   padding: 10px;
   font-size: 16px;
   border: 0;
   border-radius: 100px;
+  text-decoration: none;
+  transition: 0.3s ease-out;
+}
+.c-button:hover {
+  background: #1a83bf;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+.c-nav__open,
+.c-nav__close {
+  display: block;
+  width: 100%;
 }
 @media (min-width: 1000px) {
   .c-nav__open,
@@ -724,6 +734,22 @@ body {
   .c-header {
     min-height: 320px;
   }
+}
+
+.c-header--full {
+  color: #464d4e;
+  background: #fafafa url("../img/hero-bg.png");
+  min-height: 100vh;
+}
+.c-header--full .c-header__byline {
+  margin-bottom: 1.5rem;
+}
+.c-header--full .c-header__byline a {
+  color: inherit;
+}
+.c-header--full .c-button {
+  min-width: 160px;
+  align-self: center;
 }
 
 .c-header__title {

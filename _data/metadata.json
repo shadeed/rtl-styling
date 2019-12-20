@@ -1,5 +1,5 @@
 {
-  "title": "Your Blog Name",
+  "title": "RTL Styling",
   "url": "https://myurl.com/",
   "description": "I am writing about my experiences as a naval navel-gazer.",
   "feed": {
@@ -10,7 +10,7 @@
     "id": "https://myurl.com/"
   },
   "author": {
-    "name": "Your Name Here",
-    "email": "youremailaddress@example.com"
+    "name": "Ahmad Shadeed",
+    "email": "shadeed9@gmail.com"
   }
 }

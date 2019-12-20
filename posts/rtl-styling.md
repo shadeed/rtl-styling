@@ -9,7 +9,7 @@ layout: layouts/post.njk
 Over 292 million people around the world speak Arabic as their first language. Arabic (al-Arabiyyah, pronounced /al ʕarabijja/, /ʕarabiː/) is my native language, and I sometimes build websites that need to support both left-to-right (LTR) and right-to-left (RTL) styles.
 
 ## Introduction to RTL styling
-The default page direction in CSS is LTR. If you check the browser of your choice and inspect the browser’s default agent styles for the `html` element, you will notice that `ltr` is the default value for the `dir` (or direction) (or direction) property. Below is a basic example to show the difference between an LTR and an RTL layout.
+The default page direction in CSS is LTR. If you check the browser of your choice and inspect the browser’s default agent styles for the `html` element, you will notice that `ltr` is the default value for the `dir` (or direction) property. Below is a basic example to show the difference between an LTR and an RTL layout.
 
 ![](../../img/rtl-intro-1.png)
 

@@ -1,9 +1,11 @@
 {
   "title": "RTL Styling",
   "url": "https://myurl.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "An extensive guide on how to style for RTL in CSS
+
+  ",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "An extensive guide on how to style for RTL in CSS",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://myurl.com/feed/feed.xml",

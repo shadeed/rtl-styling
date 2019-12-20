@@ -734,6 +734,11 @@ aside h2 {
     overflow-y: scroll;
   }
 }
+@media (max-width: 999px) {
+  aside {
+    display: none;
+  }
+}
 
 .content {
   max-width: 750px;

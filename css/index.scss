@@ -84,6 +84,10 @@ aside {
     height: 100vh;
     overflow-y: scroll;
   }
+
+  @media (max-width: 999px) {
+    display: none;
+  }
 }
 
 .content {

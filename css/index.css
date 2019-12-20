@@ -128,11 +128,35 @@ html {
   opacity: 0.6;
 }
 
+.c-nav__open,
+.c-nav__close {
+  appearance: none;
+  background: #1d92d5;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 100px;
+}
+
+@media (min-width: 1000px) {
+  .c-nav__close {
+    display: none;
+  }
+}
+
 .post-content {
   color: #555555;
-  line-height: 1.75;
+  line-height: 1.5;
   max-width: 720px;
   margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  .post-content {
+    line-height: 1.75;
+  }
 }
 .post-content h1,
 .post-content h2,
@@ -146,8 +170,14 @@ html {
 }
 .post-content h2 {
   font-size: 26px;
-  margin-bottom: 32px;
-  margin-top: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 1000px) {
+  .post-content h2 {
+    margin-bottom: 32px;
+    margin-top: 3rem;
+  }
 }
 .post-content h3 {
   font-weight: 500;
@@ -245,7 +275,12 @@ html {
 }
 .post-content img {
   max-width: 100%;
-  margin: 1.5rem 0 2.5rem;
+  margin: 1.5rem 0 1.5rem;
+}
+@media (min-width: 1000px) {
+  .post-content img {
+    margin: 1.5rem 0 2.5rem;
+  }
 }
 .post-content figure {
   background: transparent;
@@ -327,10 +362,15 @@ html {
 .post-content [class*=language-] {
   position: relative;
   display: block;
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1.45;
   overflow-y: scroll;
   border-radius: 4px;
+}
+@media (min-width: 1000px) {
+  .post-content [class*=language-] {
+    font-size: 1rem;
+  }
 }
 .post-content pre[class*=language-] {
   margin-bottom: 1.5rem;
@@ -437,12 +477,6 @@ html {
     height: 10px;
     border-radius: 50%;
     background: currentColor;
-  }
-
-  .post-content--work figure {
-    position: relative;
-    width: 130%;
-    left: -15%;
   }
 }
 .highlight .err {
@@ -682,25 +716,40 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 320px;
+  min-height: 175px;
   text-align: center;
   padding: 1rem;
   color: #fff;
   background: #27739a url("../img/hero-bg.png");
   background-blend-mode: multiply;
 }
+@media (min-width: 1000px) {
+  .c-header {
+    min-height: 320px;
+  }
+}
 
 .c-header__title {
   color: inherit;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 1000px) {
+  .c-header__title {
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .c-header__subline {
+  line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
+.c-header__byline {
+  font-size: 14px;
+}
 .c-header__byline img {
   width: 35px;
   height: 35px;
@@ -718,9 +767,6 @@ body {
   text-decoration: underline;
 }
 
-aside {
-  background: #eff4f7;
-}
 aside h2 {
   margin: 1rem 0 0 1rem;
   color: #3863d9;
@@ -728,6 +774,7 @@ aside h2 {
 }
 @media (min-width: 1000px) {
   aside {
+    background: #eff4f7;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -736,7 +783,26 @@ aside h2 {
 }
 @media (max-width: 999px) {
   aside {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1rem 1rem 0;
+  }
+  aside h2 {
     display: none;
+  }
+  aside .c-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #eff4f7;
+    overflow-y: scroll;
+    padding-top: 3rem;
+  }
+  aside .c-nav.is-active {
+    display: block;
   }
 }
 

@@ -15,6 +15,7 @@ templateClass: tmpl-post
     <aside>
     <h2>Table of Contents</h2>
     <nav class="c-nav">
+        <button class="c-nav__close">Close</button>
         <ul class="">
         <li class="c-nav__item">
             <a href="#introduction-to-rtl-styling"
@@ -115,6 +116,7 @@ templateClass: tmpl-post
         
         </ul>
     </nav>
+    <button class="c-nav__open">Table of Contents</button>
     </aside>
     <main>
     <div class="content post-content">
@@ -124,5 +126,15 @@ templateClass: tmpl-post
 </div>
 
 <script>
-    console.log('Hello World');
+    let openNav = document.querySelector('.c-nav__open');
+    let closeNav = document.querySelector('.c-nav__close');
+    let nav = document.querySelector('.c-nav');
+
+    openNav.addEventListener('click', function(){
+        nav.classList.add('is-active');
+    });
+
+    closeNav.addEventListener('click', function(){
+        nav.classList.remove('is-active');
+    });
 </script>

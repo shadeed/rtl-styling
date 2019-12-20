@@ -38,3 +38,22 @@
 		opacity: 0.6;
 	}
 }
+
+.c-nav__open,
+.c-nav__close {
+	appearance: none;
+	background: #1d92d5;
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 100px;
+}
+
+.c-nav__close {
+	@media (min-width: 1000px) {
+		display: none;
+	}
+}

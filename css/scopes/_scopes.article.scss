@@ -1,8 +1,12 @@
 .post-content {
   color: $color-black;
-  line-height: 1.75;
+  line-height: 1.5;
   max-width: 720px;
   margin: 0 auto;
+
+  @media (min-width: 1000px) {
+    line-height: 1.75;
+  }
 
   h1,
   h2,
@@ -17,8 +21,13 @@
 
   h2 {
     font-size: 26px;
-    margin-bottom: 32px;
-    margin-top: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+
+    @media (min-width: 1000px) {
+      margin-bottom: 32px;
+      margin-top: 3rem;
+    }
   }
 
   h3 {
@@ -125,7 +134,11 @@
 
   img {
     max-width: 100%;
-    margin: 1.5rem 0 2.5rem;
+    margin: 1.5rem 0 1.5rem;
+
+    @media (min-width: 1000px) {
+      margin: 1.5rem 0 2.5rem;
+    }
   }
 
   figure {
@@ -210,10 +223,14 @@
   [class*="language-"] {
     position: relative;
     display: block;
-    font-size: 1rem;
+    font-size: 0.85rem;
     line-height: 1.45;
     overflow-y: scroll;
     border-radius: $global-radius;
+
+    @media (min-width: 1000px) {
+      font-size: 1rem;
+    }
   }
 
   pre[class*="language-"] {
@@ -333,14 +350,7 @@
       }
     }
   }
-
-  .post-content--work {
-    figure {
-      position: relative;
-      width: 130%;
-      left: -15%;
-    }
-  }
+  
 }
 
 .highlight .err {

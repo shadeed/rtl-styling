@@ -29,26 +29,38 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 320px;
+  min-height: 175px;
   text-align: center;
   padding: 1rem;
   color: #fff;
   background: #27739a url("../img/hero-bg.png");
   background-blend-mode: multiply;
+
+  @media (min-width: 1000px) {
+    min-height: 320px;
+  }
 }
 
 .c-header__title {
   color: inherit;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: 1000px) {
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .c-header__subline {
+  line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
 .c-header__byline {
+  font-size: 14px;
+
   img {
     width: 35px;
     height: 35px;
@@ -70,7 +82,7 @@ body {
 }
 
 aside {
-  background: #eff4f7;
+  
 
   h2 {
     margin: 1rem 0 0 1rem;
@@ -79,6 +91,7 @@ aside {
   }
 
   @media (min-width: 1000px) {
+    background: #eff4f7;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -86,7 +99,29 @@ aside {
   }
 
   @media (max-width: 999px) {
-    display: none;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1rem 1rem 0;
+
+    h2 {
+      display: none;
+    }
+
+    .c-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #eff4f7;
+      overflow-y: scroll;
+      padding-top: 3rem;
+
+      &.is-active {
+        display: block;
+      }
+    }
   }
 }
 
@@ -103,4 +138,3 @@ aside {
   border: 1px solid #e0e0e0;
   border-radius: 4px;
 }
-

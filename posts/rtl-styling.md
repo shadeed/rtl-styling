@@ -259,7 +259,7 @@ The truncation for the English text is incorrect. It should be at the end of the
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-### 5) Picking a Bad RTL Font
+### 5. Picking a Bad RTL Font
 Having an RTL version of a design doesn’t mean you can pick the system’s default font and call it a day. The font has to be picked carefully to ensure good readability. An example of this is Twitter:
 
 ![](../../img/en-vs-ar.png)

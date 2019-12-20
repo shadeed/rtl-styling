@@ -49,11 +49,13 @@
     padding: 10px;
     font-size: 16px;
     border: 0;
-    border-radius: 100px;
-}
-
-.c-nav__close {
+	border-radius: 100px;
+	
 	@media (min-width: 1000px) {
 		display: none;
 	}
+}
+
+.c-nav__close {
+	margin-bottom: 1rem;	
 }

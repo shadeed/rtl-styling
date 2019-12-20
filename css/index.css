@@ -140,11 +140,15 @@ html {
   border: 0;
   border-radius: 100px;
 }
-
 @media (min-width: 1000px) {
-  .c-nav__close {
+  .c-nav__open,
+.c-nav__close {
     display: none;
   }
+}
+
+.c-nav__close {
+  margin-bottom: 1rem;
 }
 
 .post-content {
@@ -225,6 +229,9 @@ html {
   color: var(--color-black);
   font-size: 16px;
   line-height: 1.75;
+}
+.post-content p:first-child img {
+  margin-top: 0;
 }
 .post-content p code {
   display: inline-block !important;
@@ -402,16 +409,6 @@ html {
 
 .post-demo {
   margin-bottom: 24px;
-}
-
-.post-content--work h1 {
-  color: #555555;
-  text-transform: capitalize;
-}
-.post-content--work iframe {
-  width: 100%;
-  height: 420px;
-  margin-bottom: 32px;
 }
 
 .post-author {
@@ -799,7 +796,7 @@ aside h2 {
     right: 0;
     background: #eff4f7;
     overflow-y: scroll;
-    padding-top: 3rem;
+    padding-top: 1rem;
   }
   aside .c-nav.is-active {
     display: block;

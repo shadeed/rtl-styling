@@ -6,22 +6,22 @@ layout: layouts/post.njk
 
 ![](../../img/rtl-styling-intro@2x.jpg)
 
-There are 292+m people around the world that speak Arabic as their first language. Arabic (al-Arabiyyah) is my native language, and I sometimes build websites that need to support both LTR(Left to Right) and RTL(Right to Left) styles. It's pronounced like that: /al ʕarabijja/, /ʕarabiː/.
+Over 292 million people around the world speak Arabic as their first language. Arabic (al-Arabiyyah, pronounced /al ʕarabijja/, /ʕarabiː/) is my native language, and I sometimes build websites that need to support both left-to-right (LTR) and right-to-left (RTL) styles.
 
 ## Introduction to RTL styling
-The default page direction in CSS is LTR. If you check a browser of your choice and inspect the default browser agent styles for the `html` element, you will notice that LTR is the default value for `direction` property. Below is a basic example to show the difference between a Left to Right (LTR) and a Right to Left (RTL) layout.
+The default page direction in CSS is LTR. If you check the browser of your choice and inspect the browser’s default agent styles for the `html` element, you will notice that `ltr` is the default value for the `dir` (or direction) (or direction) property. Below is a basic example to show the difference between an LTR and an RTL layout.
 
 ![](../../img/rtl-intro-1.png)
 
-Notice for RTL, the text reads from Right to Left, which is the opposite for LTR text. Luckily, the browser did all the work for that simple example. To switch a document language direction, you will need to add the `dir` attribute to the root element.
+Notice for the RTL section, the text reads from right to left, which is the opposite of the LTR text. Luckily, the browser did all of the work for this simple example. To switch a document’s language direction, you will need to add the `dir` attribute to the root element.
 
 ```html
 <html dir="rtl">...</html>
 ```
 
-When the `dir` is changed, the following elements should be flipped automatically by default: Headings, Paragraphs, Links, Images, and Form Elements.
+When the `dir` is changed, the following elements should flip automatically: headings, paragraphs, links, images, and form elements.
 
-It's worth mentioning that there is a `dir="auto"` which switch the direction automatically based on the content parsed. According to the [HTML](https://www.w3.org/TR/2011/WD-html5-author-20110809/global-attributes.html) spec:
+It’s worth mentioning that there is a `dir="auto"` attribute, which switches the direction automatically based on the content parsed. According to the [HTML specification](https://www.w3.org/TR/2011/WD-html5-author-20110809/global-attributes.html):
 > Authors are urged to only use this value as a last resort when the direction of the text is truly unknown, and no better server-side heuristic can be applied.
 
 <p class="codepen" data-height="428" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="7662a5f048c5a6a1bbdb89905327c965" style="height: 428px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Basic Example">
@@ -30,16 +30,17 @@ It's worth mentioning that there is a `dir="auto"` which switch the direction au
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-In addition to setting the `dir=rtl` attribute on the HTML element, it's also possible to add `direction: rtl` as a CSS Style. 
+In addition to setting the `dir=rtl` attribute on the HTML element, we may also add `direction: rtl` as a CSS style. 
 
 ```css
 .element { direction: rtl; }
 ```
 
-However, the CSSWG recommends that the direction should be defined on the root element `html` to ensure the correct bidirectional layout in the absence of CSS.
+However, the CSSWG recommends that the direction should be defined on the `html` root element to ensure the correct bidirectional layout in the absence of CSS.
 
-## Basic Example Of Flipping a Design
-Let's take a more detailed example to explore how to flip a design from LTR to RTL.
+## Basic Example of Flipping a Design
+
+Let’s see a more detailed example to explore how to flip a design from LTR to RTL.
 
 ![rtl-intro-ltr.jpg](../../img/rtl-intro-ltr.jpg)
 
@@ -54,7 +55,7 @@ Let's take a more detailed example to explore how to flip a design from LTR to R
 </article>
 ```
 
-Initially, I used the good old Float to align the image to the left in the LTR design, and of course, I used clearfix.
+Initially, I used the good old float to align the image to the left in the LTR design — and, of course, I used a clearfix.
 
 ```css
 .media:after {
@@ -70,10 +71,10 @@ Initially, I used the good old Float to align the image to the left in the LTR d
 }
 ```
 
-After adding `dir="rtl"` for the Arabic element, the result looks like the below.
+After we add `dir="rtl"` for the Arabic element, the result looks like this:
 ![](../../img/rtl-intro-ltr-2.jpg)
 
-Everything is flipped except the image. That's because it has `float: left` and `margin-right: 16px`. To solve that, I need to override those styles:
+Everything is flipped except for the image. That’s because it has `float: left` and `margin-right: 16px`. To solve that, we need to override those styles:
 ```css
 .media[dir="rtl] img {
     float: right;
@@ -89,15 +90,15 @@ Everything is flipped except the image. That's because it has `float: left` and 
 </p>
 
 ## Mixing English and Arabic Content in an LTR Layout
-What would happen in case some text has a mix of English and Arabic words, while the layout is LTR? Well, the result will look weird.
+What would happen if some text had a mix of English and Arabic words, while the layout was LTR? Well, the result would look weird.
 
 ![](../../img/ltr-mix-1.jpg)
 
-The browser shows the title improperly. For an Arabic speaker, the title is confusing to read unless you're the author who wrote the title. It should read as the order in the below figure.
+The browser shows the title improperly. For an Arabic speaker, the title would be confusing to read, unless you’re the author who wrote it. It should read in the order shown in the figure below.
 
 ![](../../img/ltr-mix-2.jpg)
 
-To avoid the above issue, it's recommended to use the appropriate language direction when possible. Once `dir="rtl"` is set on the element, it will appear as expected.
+To avoid this issue, set the appropriate language direction whenever possible. Once `dir="rtl"` is set on the element, it will appear as expected.
 
 ![](../../img/ltr-mix-3.jpg)
 
@@ -107,11 +108,11 @@ To avoid the above issue, it's recommended to use the appropriate language direc
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-It can be more complex if the title is longer. Here, I added a bit longer title and the result was unexpected. I added a number to show the correct order.
+It can get more complex when the title is longer. Below, I’ve made the title a bit longer, and the result was unexpected. I’ve affixed numbers to show the correct order.
 
 ![](../../img/ltr-mix-4.jpg)
 
-When `dir="rtl` is set on the element, the title is much clearer. In other words, the sentence looks grammatically correct and in the right order.
+When `dir="rtl` is set on the element, the title is much clearer. That is, the sentence looks grammatically correct and in the right order.
 
 ![](../../img/ltr-mix-5.jpg)
 
@@ -122,16 +123,16 @@ When `dir="rtl` is set on the element, the title is much clearer. In other words
 </p>
 
 ## Flexbox Layout Module
-Flexbox is based on the writing mode of the document. The writing mode is used to specify how blocks are laid out on a page. For example, a Chinese website is laid from top to bottom. Writing mode is for that purpose. In Flexbox, items are distributed based on the writing mode of the document. The default value for `writing-mode` in English and Arabic is `horizontal-tb`
+Flexbox is based on the writing mode of the document. The writing mode is used to specify how blocks are laid out on the page. For example, a Chinese website is laid out from top to bottom. The writing mode is for this purpose. In flexbox, items are distributed according to the writing mode of the document. The default value for `writing-mode` in English and Arabic is `horizontal-tb`.
 
-According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode), `horizontal-tb` means the following:
+According to [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) (MDN), `horizontal-tb` means the following:
 > Content flows horizontally from left to right, vertically from top to bottom. The next horizontal line is positioned below the previous line.
 
-When the page direction is changed to RTL, Flexbox will flip its items accordingly. That's a huge benefit! Below is an illustration that shows how the Flexbox axis is flipped based on the direction.
+When the page’s direction is changed to RTL, flexbox will flip its items accordingly. That’s a huge benefit! The illustration below shows how the flexbox axis is flipped based on the direction.
 
 ![](../../img/flexbox-axis.jpg)
 
-In the below example, I laid out three items and numbered each of them to see the difference when the direction change.
+In the example below, I’ve laid out three items and numbered each of them to show the difference when the direction changes.
 
 ```html
 <div class="element">
@@ -144,7 +145,7 @@ In the below example, I laid out three items and numbered each of them to see th
 ```css
 .element {
     display: flex;
-    flex-direction: row; /* Default value, added for explanation purposes */
+    flex-direction: row; /* Default value, added for clarity */
 }
 ```
 
@@ -157,9 +158,9 @@ In the below example, I laid out three items and numbered each of them to see th
 </p>
 
 ## Grid Layout Module
-Same as Flexbox, the grid layout module depends on the writing mode of the document, which gives us the same benefit that we get from using Flexbox.
+Like flexbox, the grid layout module depends on the writing mode of the document, which gives us the same benefit that we get from using flexbox.
 
-In the below example, the sidebar should be on the left and the main on the right when the direction ins LTR. For RTL, it's vice versa. By using CSS Grid, the flipping will be done automatically as per the page direction.
+In the example below, the sidebar should be on the left and the `main` content on the right when the direction is LTR. For RTL, it’s vice versa. When we use CSS grid, the flipping will be done automatically according to the page’s direction.
 
 ```html
 <div class="element">
@@ -185,18 +186,18 @@ In the below example, the sidebar should be on the left and the main on the righ
 </p>
 
 ## Common Mistakes When Flipping to RTL
-There are some common mistakes that Non-Arabic speakers made and they are easy to spot.
+Non-Arabic speakers make some common mistakes that are easy to spot.
 
-### 1) Letter Spacing
-In English, it's common to add `letter-spacing` between letters of a word. It's also known as Tracking in typography. Consider the following example for English content. It sounds normal.
+### 1. Letter-Spacing
+In English, it’s common to add `letter-spacing` to adjust the letters of a word. It’s also known as tracking in typography. Consider the following example for English content. It looks normal.
 
 ![](../../img/letter-spacing.jpg)
 
-However, if the same `letter-spacing` were added to Arabic content, it will look weird. Consider the following real-life example.
+However, if the same `letter-spacing` style was added to Arabic content, it would look weird. Consider the following real-life example.
 
 ![](../../img/letter-spacing-rtl.jpg)
 
-Notice that in the content with `letter-spacing`, the word's letters look **disconnected**. That's wrong. Arabic letters are supposed to look connected and keeping the spacing will be against that. Make sure to do `letter-spacing: 0` when working on a multilingual layout.
+Notice that in the content with `letter-spacing`, each word’s letters look disconnected from each other. That’s not right. Arabic letters are supposed to look connected, and keeping the English `letter-spacing` works against that. Make sure to set `letter-spacing: 0` when working on a multilingual layout.
 
 <p class="codepen" data-height="397" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="29b1428dac29ced513adc482b22e7372" style="height: 397px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Test 6">
   <span>See the Pen <a href="https://codepen.io/shadeed/pen/29b1428dac29ced513adc482b22e7372">
@@ -204,12 +205,12 @@ Notice that in the content with `letter-spacing`, the word's letters look **disc
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-### 2) Text Transparency
-It's common to change the transparency of text color to make it look secondary for example. That works for English. However, when the content is Arabic, that will cause a weird text rendering issue.
+### 2. Text Transparency
+It’s common to change the transparency of text color — to make it look secondary, for example. That works in English. However, when the content is Arabic, it causes a weird text-rendering issue.
 
 ![](../../img/rtl-transparency.jpg)
 
-There are some areas with a different color between each letter. In this example, `letter-spacing` hasn't been changed so the issue is not related to that. The solution is simply to use color without RGBA or opacity.
+There are some areas with a different color between letters. In this example, `letter-spacing` hasn’t been adjusted, so the issue is not related to that. The solution is simply to set the color without RGBa or opacity.
 
 <p class="codepen" data-height="395" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="d8b1d30b39933e0435e52b738b0402dd" style="height: 395px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Test 7">
   <span>See the Pen <a href="https://codepen.io/shadeed/pen/d8b1d30b39933e0435e52b738b0402dd">
@@ -217,37 +218,37 @@ There are some areas with a different color between each letter. In this example
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-### 3) Differences in Words Size Between Languages
-Sometimes, when a website is translated into Arabic, the sizing of elements change due to some words become bigger or smaller after translation. Consider the following example where I mocked the navigation of Smashing Magazine website.
+### 3. Differences in Word Sizes Between Languages
+Sometimes, when a website is translated into Arabic, the sizing of elements changes due to some words becoming bigger or smaller after translation. Consider the following example, in which I’ve mocked up the navigation of Smashing Magazine’s website.
 
 ![](../../img/website-header.png) 
 
-In the Arabic Version, some of the words are almost the same size as its English counterpart, some are the same, and some are bigger. To make it more clear, here is a comparison between each word and its Arabic translation.
+In the Arabic version, some of the words are almost the same size as their English counterparts, some are the same, and some are bigger. To make it clearer, here is a comparison of each word and its Arabic translation.
 
 ![](../../img/website-header-translation.png)
 
-You might be thinking about why I'm talking about differences between word size since this is normal and expected. Consider the following real-life example from Linkedin.
+You might be wondering why I’m talking about differences in word sizes, since this is normal and expected. Consider the following real-life example from LinkedIn.
 
 ![](../../img/word-length-linkedin.png) 
 
-The button "Done" is translated to "تم" in Arabic which makes the button too small and weird. It's better to have a `min-width` for the button to account for such cases. I added that in the browser DevTools to show you how it's expected to look:
+The button “Done” is translated to “تم” in Arabic, which makes the button too small and looks weird. It would be better to have a `min-width` for the button to account for such cases. I’ve added that in the browser’s developer tools to show how it’s meant to look:
 ![](../../img/word-length-linkedin-2.png)
 
 And here is a very similar example from Twitter:
 ![](../../img/word-length-twitter.png)
 
-Please note that the above issues from Linkedin and Twitter has been spotted at the time of writing this article (13 Dec 2019).
+Please note that the issues above on LinkedIn and Twitter have been spotted by them as of the time of writing (13 December 2019).
 
-### 4) Text Truncation
-In the past, I worked on a project with mixed content and I faced an issue related to truncated in the wrong direction. Consider the following example.
+### 4. Text Truncation
+I once worked on a project with mixed content, and I faced an issue related to text truncation in the wrong direction. Consider the following example.
 
 ![](../../img/text-trun.png)
 
-The truncation for the English text is incorrect. It should be at the end of the element, not the start of it. To solve that, set the attribute `dir="auto"` on the element itself and it will automatically parse the content and decide which `dir` it is.
+The truncation for the English text is incorrect. It should be at the end of the element, not the start of it. To solve that, set the attribute `dir="auto"` on the element itself, and then the browser will automatically parse the content and decide which `dir` it is.
 
 ```html
 <p dir="auto">أهلاً وسهلاً بكم في المقال الذي يتحدث عن تصميم صفحات الويب للغة العربية</p>
-<p dir="auto">Welcome to the article that explains about how to design web for RTL pages</p>
+<p dir="auto">Welcome to the article that explains how to design for RTL pages.</p>
 ```
 
 ![](../../img/text-trun-2.png)
@@ -259,41 +260,41 @@ The truncation for the English text is incorrect. It should be at the end of the
 </p>
 
 ### 5) Picking a Bad RTL Font
-Having an RTL version of a design doesn't mean picking the default system font and calling it a day. It had to be picked carefully to ensure good readability. An example of that is Twitter:
+Having an RTL version of a design doesn’t mean you can pick the system’s default font and call it a day. The font has to be picked carefully to ensure good readability. An example of this is Twitter:
 
 ![](../../img/en-vs-ar.png)
 
-From an Arabic speaker point of view, the word "تغريد" is hard to read due to:
-1) The font is not good
-2) Bold style
-3) The word dots are so small and really close to the letters
+From an Arabic speaker’s point of view, the word “تغريد” is hard to read for a few reasons:
+- The font is not good.
+- The bold weight hinders readability.
+- The word’s dots are small and really close to the letters.
 
-I mocked up a design that looks more clear.
+I’ve mocked up a design that looks clearer:
 
 ![](../../img/en-vs-ar-2.png)
 
-### 6) Mixing Hindi and Arabic Numerals
-In Arabic, there are two ways of using numbers:
+### 6. Mixing Hindi and Arabic Numerals
+In Arabic, there are two ways of writing numbers:
 - Hindi: ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩
 - Arabic: 0 1 2 3 4 5 6 7 8 9
 
-The numbers used in English are inherited from the Arabic ones "0, 1, 2, 3, 4, 5, 6, 7, 8, 9". When there is a content that has numbers, it should be consistent. Either it use Hindi or Arabic numerals.
+The numbers used in English are inherited from the Arabic ones: “0, 1, 2, 3, 4, 5, 6, 7, 8, 9”. Content that has numbers should be consistent, either Hindi or Arabic numerals.
 
 According to Wikipedia:
 > The reason the digits are more commonly known as "Arabic numerals" in Europe and the Americas is that they were introduced to Europe in the 10th century by Arabic-speakers of North Africa, who were then using the digits from Libya to Morocco.
 
-In the following mockup, there is a mix of Hindi and Arabic numbers. This looks incosistent and it should unified by using one type of the numerals.
+The following mockup has a mix of Hindi and Arabic numbers. It looks inconsistent, and it should look unified with one type of numerals.
 ![](../../img/ar-numbers.png)
 
 ## Common Things That Might Not Work for RTL
 
-### 1) Line Height
+### 1. Line Height
 
-It's common to have a different typeface that will be served for the RTL layout. In that case, you should test how the content looks in one and multiple lines. In the following example, the spacing between the lines for the Arabic text is less than the English one. Even though both of them have the same `line-height`.
+It’s common to set a different typeface for a RTL layout. In this case, test how the content looks on one and multiple lines. In the following example, the spacing between lines for the Arabic text is less than for the English one, even though both of them have the same `line-height`.
 
 ![](../../img/line-height-1.png)
 
-It's important to account for that and to provide a suitable `line-height` for the Arabic content.
+It’s important to account for this and to provide a suitable `line-height` for the Arabic content.
 
 <p class="codepen" data-height="255" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="1cb6b25852a009d5fdaf1902bcfaa974" style="height: 255px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Test 8">
   <span>See the Pen <a href="https://codepen.io/shadeed/pen/1cb6b25852a009d5fdaf1902bcfaa974">
@@ -301,26 +302,26 @@ It's important to account for that and to provide a suitable `line-height` for t
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-In Twitter, for example, there is a button with a cut-off content due to an unsuitable value of line-height.
+On Twitter, for example, there is a button with cut-off content due to an unsuitable value for `line-height`.
 
 ![](../../img/ar-kasra.png)
 
-Notice that in the first image, there is an Arabic diacritic cut-off. It's called "Kasra" and it's vital for reading the word correctly. In the other image, I fixed the line-height and now it appears fully without being cut-off.
+Notice that in the first image, an Arabic diacritic is cut off. It’s called the “kasra”, and it’s vital for reading the word correctly. In the adjoining image, I’ve fixed the line height, and now it appears in full without being cut off.
 
-### 2) Links Underline
+### 2. Underlined Links
 
-The default text underline looks bad when used with Arabic words. It's related to how words and letters are written in Arabic. See the following illustration:
+The default text underline looks bad when used with Arabic words. This relates to how words and letters are written in Arabic. See the following illustration:
 ![](../../img/rtl-underline-1.png)
 
-I highlighted the weird areas with the red circle. The underline is kind of covering the dots of the letters. It's still not clear? Here is a close up look.
+I’ve highlighted the weird areas with a red circle. The underline is kind of covering the dots of the letters. Still not clear? Here is a close-up:
 
 ![](../../img/rtl-underline-2.png)
 
-The dots highlighted in blue are overlapping with the underline. This is not good and it makes the text hard to read. The solution is to use a custom underline with CSS.
+The dots highlighted in blue overlap with the underline. This is not good, and it makes the text hard to read. The solution is to use a custom underline with CSS.
 
-#### 2.1) Text Decoration
+#### 2.1. Text Decoration
 
-It's possible to change the underline color and style with the new `text-decoration-style` and `text-decoration-color` properties. However, it might not be guaranteed to work with different typefaces and font sizes. At the time of writing, Firefox is the browser that has the best support for those properties.
+It’s possible to change the underline’s style and color with the new `text-decoration-style` and `text-decoration-color` properties. However, it is not guaranteed to work with all typefaces and font sizes. At the time of writing, Firefox is the browser that has the best support for these properties.
 
 ```css
 .link-2 {
@@ -333,9 +334,9 @@ It's possible to change the underline color and style with the new `text-decorat
 
 ![](../../img/text-deco-1.png)
 
-#### 2.2) Box Shadow
+#### 2.2. Box Shadow
 
-The browser support is much better than `text-decoration` and actually, it's possible to detect the support for one of the new `text-decoration` properties and if not supported, the Box Shadow solution will be used.
+Browser support for `box-shadow` is much better than for `text-decoration`. It’s possible to detect support for one of the new `text-decoration` properties, and if the browser does not support it, then it will fall back to the `box-shadow` property.
 
 ```css
 .link-3 {
@@ -356,83 +357,83 @@ The browser support is much better than `text-decoration` and actually, it's pos
 
 ![](../../img/text-deco-2.png)
 
-### 3) Line Break
+### 3. Line Break
 
-If the CSS has `word-break`, you need to test that since it might *break* the Arabic words. Consider the following:
+If your CSS has the `word-break` property, you’ll need to test it because it might break Arabic words. Consider the following:
 
 ![](../../img/word-break.png)
 
-The areas with a circle around are broken Arabic words due to the effect of `word-break`. In Arabic, there no such thing as breaking words. The letters of a word are connected with each other so it's not possible to break a word.
+The circled areas are broken Arabic words due to the effect of `word-break`. In Arabic, there is no such thing as word breaks. The letters of a word are connected with each other, so it’s not possible to break a word.
 
-### 4) Words Shortcuts
+### 4. Abbreviations
 
-In English, it's common to have shortcuts for the week days. For example, "Saturday" becomes "Sat".
+In English, it’s common to use abbreviations for, say, the days of the week. So, “Saturday” becomes “Sat”.
 
 ![](../../img/en-shorcuts.png)
 
-While in Arabic, this not possible at all since a word's letters are meant to be connected.
+In Arabic, this not possible at all because a word’s letters are meant to be connected.
 
 ![](../../img/ar-shorcuts.png)
 
 ## Bidirectional Icons
 
-There are symmetric icons that don't need to be flipped between LTR and RTL layouts. Here are some examples:
+Symmetrical icons don’t need to be flipped between LTR and RTL layouts. Here are some examples:
 
 ![](../../img/general-icons.png)
 
-For some icons, it's important to flip the direction of it so it can be clearly understood by the user. That's because the direction of the page is from right to left.
+For some icons, though, it’s important to flip their direction in RTL layouts, so that they can be clearly understood by the user.
 
 ![](../../img/bidi-icons.png)
 
-## Flipping a Component
-While working on some components, I need a way to quickly flip a component. In the Sketch App, I started copying each component and then flip it with a flip command. The same functionality is available in Adobe XD and Figma.
+## Flipping Components
+While working on some components, I need a way to quickly flip them. In the Sketch app, I’ll copy a component and then flip it with the “flip” command. The same functionality is available in Adobe XD and Figma.
 
 ![](../../img/sketch-flip.png)
 
-To see what I mean in action here is a GIF image that shows what I did after flipping the component.
+To see what I mean, here is a GIF showing what I did after flipping a component.
 
 ![](../../img/sketch-flip.gif) 
 
 ## RTL Design Considerations
-In this section, I'll go through the most commonly used components and show how it should look in RTL mode.
+In this section, I’ll go through the most common components and show how they should look in RTL mode.
 
 ### Button Icons
-It's common to have a button that opens a menu for more actions. In that case, the icon place should be flipped.
+It’s common to have a button with an icon that opens a menu for more actions. In this case, the icon’s position should be flipped in the RTL layout.
 
 ![](../../img/button-icons.png)
 
 ### Form Inputs
-Some form inputs should remain left-aligned in RTL. For example, email and mobile number inputs.
+Some form inputs should remain left-aligned in RTL — for example, email and mobile-number inputs.
 
 ![](../../img/form-inputs.png)
 
 ### Breadcrumbs
-The arrows in the breadcrumbs pattern should be flipped, too.
+The arrows in the breadcrumb pattern should be flipped, too.
 
 ![](../../img/breadcrumbs.png) 
 
 ### Page Header
-A page header component contains a start and end sections. Each one of them will be flipped in RTL.
+A page header component contains start and end sections. Each one of them should be flipped in RTL.
 
 ![](../../img/page-header.png)
 
 ### Tables
-A table should be flipped when in RTL style.
+A table should also be flipped.
 
 ![](../../img/tables.png)
 
 ### Tabs
-For a tabs component, the icons are on the left of the label in LTR. In RTL, this should be flipped.
+For a tabs component in LTR, the icons would be to the left of the label. In RTL, these should be flipped.
 
 ![](../../img/tabs.png)
 
 ### Card
-In a horizontal card, the order of the image and content is flipped in RTL.
+For a horizontal card, the order of the image and the text should be flipped in RTL.
 
 ![](../../img/card.png)
 
-### Toast
-As you might expect, close and warning icons are flipped.
+### Toasts
+As you might expect, “close” and warning icons should flipped.
 
 ![](../../img/toasts.png)
 
@@ -440,21 +441,21 @@ As you might expect, close and warning icons are flipped.
 According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties):
 > CSS Logical Properties and Values is a module of CSS introducing logical properties and values that provide the ability to control layout through logical, rather than physical, direction and dimension mappings.
 
-Let's take a simple example. I need to align a text to the left, so I added the following.
+Let’s take a simple example. Suppose we need to align a string of text to the left. So, we add the following:
 ```css
 .page-header {
     text-align: right;
 }
 ```
 
-And for RTL:
+And for the RTL:
 ```css
 [dir="rtl"] .nav-item {
     text-align: left;
 }
 ```
 
-What if there is a way to add one `text-align` value that change the direction based on the page direction? CSS Logical Properties to the rescue!
+What if there was a way to add one `text-align` value that changes the direction based on the page’s direction? CSS logical properties to the rescue!
 
 ```css
 .page-header {
@@ -462,18 +463,18 @@ What if there is a way to add one `text-align` value that change the direction b
 }
 ```
 
-By having that, the direction of `text-align` will be based on the page. [Demo](https://codepen.io/shadeed/pen/fb4e2f89ca23ab53f8b37112f027c85b?editors=1100)
+By having this, the direction of `text-align` will be based on the page. [Demo](https://codepen.io/shadeed/pen/fb4e2f89ca23ab53f8b37112f027c85b?editors=1100)
 
-To make it easy to imagine the difference between `start` and `end`, I made the below mockup that shows that. The value `start` is equal to left in LTR and `end` is Right for RTL. The same applies for `end` as well.
+To make it easy to see the difference between `start` and `end`, I’ve made the mockup below. The `start` value is equal to left in LTR, and `end` is equal to right in RTL. The same applies for `end` as well.
 
 ![](../../img/start-end.png)
 
-Now that you got a basic idea about how it works. Let's explore more examples and use cases for CSS Logical Properties.
+Now that you’ve got a basic idea of how it works, let’s explore more examples and use cases for CSS logical properties.
 
 ### Logical Padding
 ![](../../img/css-logical-padding.png)
 
-There is a search input with a search icon on the right. I should add padding for both left and right. The padding on the right is a bit bigger to avoid text being below the search icon.
+Suppose we have a search input, with a search icon on the right. We should add padding on both the left and the right. The padding on the right would be a bit bigger to prevent the text from dropping below the search icon.
 
 ```css
 .input--search {  
@@ -486,7 +487,7 @@ There is a search input with a search icon on the right. I should add padding fo
 
 ![](../../img/css-logical-margin.png)
 
-The margin on the right side of the avatar needs to be logical, so I used the `margin-inline-start` for that purpose.
+The margin on the right side of this icon needs to be logical, so we’ll use `margin-inline-start` for that.
 
 ```css
 .page-header__avatar {  
@@ -497,7 +498,7 @@ The margin on the right side of the avatar needs to be logical, so I used the `m
 ### Logical Borders
 ![](../../img/css-logical-border.png)
 
-Often times, you might need to add a border as a way of indicating that a navigation element is active. In the design above, there is a border on the left side of each navigation element. How to make it logical?
+Often times, you might need to add a border to indicate that a navigation element is active. In the design above, there is a border on the left side of each navigation element. How do we make it logical?
 
 ```css
 .nav__item {  
@@ -512,7 +513,7 @@ Often times, you might need to add a border as a way of indicating that a naviga
 ### Logical Border Radius
 ![](../../img/css-logical-border-radius.png)
 
-In the above design, the navigation element background has a border radius only for the top-right and bottom-right corners. In order to that logically, I used the following:
+In the design above, the navigation element’s background has a border radius only for the top-right and bottom-right corners. In order to do that logically, we use the following:
 
 ```css
 .nav__item {  
@@ -526,8 +527,8 @@ In the above design, the navigation element background has a border radius only 
 }
 ```
 
-### Logical Properties Cheatsheet
-When in doubt, use the below cheatsheet to see what's the logical equivalent of a directional CSS property. Please note that the properties included are limited to what useful for LRT/RTL. I made it based on a great [article](https://adrianroselli.com/2019/11/css-logical-properties.html) by Adrian Roselli.
+### Logical Properties Cheat Sheet
+When in doubt about the logical equivalent of a directional CSS property, use the cheat sheet below. Please note that the properties included are limited to what is useful for LRT and RTL. I made it based on a great [article](https://adrianroselli.com/2019/11/css-logical-properties.html) by Adrian Roselli.
 
 <p class="codepen" data-height="674" data-theme-id="dark" data-default-tab="result" data-user="shadeed" data-slug-hash="2981e62691e67452d9f282a5351d7c79" style="height: 674px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Logical Properties">
   <span>See the Pen <a href="https://codepen.io/shadeed/pen/2981e62691e67452d9f282a5351d7c79">
@@ -536,13 +537,13 @@ When in doubt, use the below cheatsheet to see what's the logical equivalent of 
 </p>
 
 ### Browser Support
-The support is quite good padding, margin, and text-align. However, It's not good for the border radius properites. Here are the support tables from [Can I Use](https://caniuse.com/).
+Browser support is quite good for `padding`, `margin`, and `text-align`. However, it’s not good for the border-radius properties. Here are the support tables from [Can I Use](https://caniuse.com/):
 
-![Support for CSS Logical Properties from Can I Use Website](../../img/caniuse-css-logical.png)
+![Support for CSS logical properties from Can I Use website](../../img/caniuse-css-logical.png)
 
-![Support for CSS Logical Properties from Can I Use Website](../../img/caniuse-css-logical-2.png)
+![Support for CSS logical properties from Can I Use website](../../img/caniuse-css-logical-2.png)
 
-Even though the support is not 100% perfect (And it won't be 100%, ever). I advise you to use them with a fallback method. For example:
+Even though support is not perfect (and it won’t ever be perfect), I advise you to use CSS logical properties with fallbacks. For example:
 
 ```css
 .input--search {  
@@ -553,10 +554,10 @@ Even though the support is not 100% perfect (And it won't be 100%, ever). I advi
 }
 ```
 
-Also, you can use [PostCSS Logical](https://github.com/csstools/postcss-logical) plugin that add fallbacks for each logical property used.
+Also, you can use the [PostCSS Logical](https://github.com/csstools/postcss-logical) plugin, which adds a fallback for each logical property used.
 
-## CSS Naming Convention
-In general, avoid naming CSS classes with names that are too attached to the element. Use a name that can be extracted to a reusable component. Consider the following:
+## CSS Naming Conventions
+In general, avoid giving CSS classes names that are tied to their elements. Use names that can be extracted to reusable components. Consider the following:
 
 ```html
 <div class="c-section">
@@ -568,21 +569,21 @@ In general, avoid naming CSS classes with names that are too attached to the ele
 </div>
 ```
 
-In both sections, the link is the same but its label is different. In the second section, `see-link` doesn't make sense to be used. A good name could be `c-link`. The `c` stands for the component which I learned from the ITCSS framework.
+In both sections, the links are the same but their labels are different. In the second section, `see-link` doesn’t make sense. A good name might be `c-link`. The `c` stands for component, which I learned from the ITCSS framework.
 
-Now that you got the idea, it applies to RTL styling as well. In the below design mockup, there is a section with two children.
+Now that you’ve got the idea, we can apply it to RTL styling as well. The design mockup below has a section with two children.
 
 ![](../../img/css-naming.png)
 
-Instead of naming the elements with a presentational names like `.c-page-header__left` and `.c-page-header__right`. I named them `.c-page-header__start` and `.c-page-header__end`. This is more future proof and doesn't assume that the website is in LTR or RTL only.
+Instead of giving the elements presentational names, like `.c-page-header__left` and `.c-page-header__right`, I’ve named them `.c-page-header__start` and `.c-page-header__end`. This is more future-proof and doesn’t assume that the website is only LTR or only RTL.
 
 ## Automation Tools
-There are great tools that make our job easier when we need a way to flip a design from LTR to RTL.
+Great tools exist to make our job easier when we need to flip a design from LTR to RTL.
 
-### 1) bi-app-sass
-[bi-app](https://github.com/anasnakawa/bi-app-sass) by Anas Nakawa lets you write your stylesheets once, and have them compiled into 2 different stylesheets one for left-to-right layout, and the other for right-to-left layouts
+### 1. Bi-App-Sass
+[Bi-App-Sass](https://github.com/anasnakawa/bi-app-sass) by Anas Nakawa lets you write style sheets once, and then it compiles them to two different style sheets, one for LTR and the other for RTL.
 
-This tool is useful for a large project. The result will be multiple stylesheets for each direction (LTR, RTL). Consider the following:
+This tool would be useful for a large project. The result would be multiple style sheets for each language direction. Consider the following:
 ```sass
 .elem {
   display: flex;
@@ -591,7 +592,7 @@ This tool is useful for a large project. The result will be multiple stylesheets
 }
 ```
 
-The resulted CSS will be as below:
+The resulting CSS would be this:
 `app-ltr.css`
 ```css
 .elem {
@@ -610,20 +611,20 @@ The resulted CSS will be as below:
 }
 ```
 
-Though the last commit in the Github repo was 4 years ago (Nov 2015).
+Note, however, that the last commit in the GitHub repository was four years ago (November 2015).
 
-### 2) RTLCSS
-[RTLCSS](https://rtlcss.com/) by Mohammad Younes is a Framework for converting Left-To-Right (LTR) to Right-To-Left (RTL) stylesheets.
+### 2. RTLCSS
+[RTLCSS](https://rtlcss.com/) by Mohammad Younes is a framework for converting LTR style sheets to RTL.
 
-The difference in this tool is that it can only run on the build version of a CSS file. For example, if you have a project with 50+ Sass components, RTLCSS will come in handy to parse the compiled CSS file and create an RTL version of it. 
+The difference with this tool is that it only runs on the build version of a CSS file. For example, if you have a project with 50+ Sass components, RTLCSS will come in handy for parsing the compiled CSS file and creating an RTL version of it. 
 
 ## Practical Examples
 ### Website Header
-I designed a layout specially for the goal of showing you how I would approach and think about flipping it to a Right-to-left layout.
+I’ve designed a layout specially to show you how I would approach and think about flipping it to a RTL layout.
 
 ![](../../img/blog.png)
 
-Let's start with the header component. To code it properly, I outlined a general skeleton for the header. Notice that I divided the header into main and subsections. Also, I added start and end classes for the sections.
+Let’s start with the header component. To code it properly, I’ve outlined a general skeleton. Notice that I’ve divided the header into a main section and subsections. Also, I’ve added start and end classes for the sections.
 
 ![](../../img/header-skeleton-1.png)
 
@@ -635,11 +636,11 @@ Let's start with the header component. To code it properly, I outlined a general
 }
 ```
 
-And since CSS Flexbox works based on the direction of the page as explained previously in this guide, it will flip automatically for RTL.
+And because CSS flexbox works based on the direction of the page, as explained previously in this guide, it will flip automatically for RTL.
 
 ![](../../img/header-skeleton-2.png)
 
-Next thing is the divider line between the logo and navigation. At first glance, I thought about using `border-right`. It work, but not ideal. Using pseudo elements is better since they can flip based on the page direction.
+The next thing is the dividing line between the logo and navigation. At first, I thought about using `border-right`. It works but is not ideal. Using a pseudo-element would be better because it will flip based on the page’s direction.
 
 ![](../../img/before-after.png)
 
@@ -656,14 +657,14 @@ Next thing is the divider line between the logo and navigation. At first glance,
 }
 ```
 
-Here is the current result:
+Here is the result so far:
 ![](../../img/header-initial.png)
 
-Next, I'll work on the topic component (The one in the sub header with a label and a counter). Here is a design mockup of how the topic component should look in LTR and RTL. Notice that the counter placement is different.
+Next, I’ll work on the topics component (the one in the subheader with labels and counters). Here is a design mockup of how the topics component should look in LTR and RTL. Notice that the placement of the counters is different.
 
 ![](../../img/topics.png)
 
-It might seems simple at first, but there are multiple padding and margins that needs to be handled between LTR and RTL. Here is a mockup illustrating that:
+It might seem simple at first, but multiple declarations of padding and margin need to be handled between LTR and RTL. Here is a mockup illustrating that:
 
 ![](../../img/topics-p-m.png)
 
@@ -689,11 +690,13 @@ It might seems simple at first, but there are multiple padding and margins that 
 }
 ```
 
-As you see, I used CSS Logical properties instead of `left` and `right`. Next step is the "See All" link. Notice that there is an arrow at the end of it. Below are the requirements for it:
-- The arrow color should be changed on hover.
-- The arrow should be translated to the right on hover.
+As you can see, I’ve used CSS logical properties, instead of `left` and `right`.
 
-I chose to use inline SVG for that purpose. When I tried to add a translate animation to the arrow, I thought about RTL. There is no logical property for it and I need to explore other solutions. The one that I got is animating margins.
+The next step is the “See All” link. Notice the arrow at the end of it. Below are its requirements:
+- The arrow’s color should change on hover.
+- The arrow should animate to the right on hover.
+
+I chose to use inline SVG for this purpose. When I added a `translate` animation to the arrow, I thought about RTL. There is no logical property for this, and I needed to explore other solutions. One solution I came up with was to animate the margins.
 
 ```css
 .c-link svg {
@@ -706,14 +709,14 @@ I chose to use inline SVG for that purpose. When I tried to add a translate anim
 }
 ```
 
-But animating margins is not good for performance. Though, it works. The other solution is to detect the page direction and use `translate` based on that.
+But animating margins is not good for performance, although it works. The other solution is to detect the page’s direction, and set the `translate` declaration based on that.
 
 ```css
 .c-link:hover svg {
   transform: translateX(6px);
 }
 
-/* I'm using dir=rtl on the header for explaining purposes. It should be added to the root element */
+/* I’m using dir=rtl in the header for the purpose of clarity. It should be added to the root element. */
 .c-header[dir="rtl"] .c-link svg {
   transform: scaleX(-1);
 }
@@ -723,13 +726,13 @@ But animating margins is not good for performance. Though, it works. The other s
 }
 ```
 
-Notice that for RTL, I added `scaleX(-1)` to flip the arrow icon horizontally. I can also use `rotate(180deg)` but the scale is more straightforward to me.
+Notice that for RTL, I’ve added `scaleX(-1)` to flip the arrow icon horizontally. You could use `rotate(180deg)` instead, but the scale is more straightforward to me.
 
 ![](../../img/see-all.gif)
 
-Next is the search input. Here are the requirements of it:
-- An icon placed at the end of the input.
-- The placement of the search icon is dynamic.
+Next is the search input. Here are the requirements:
+- A search icon must appear at the end of the input element.
+- The placement of the search icon must be dynamic.
 
 ```css
 .c-input--search {
@@ -738,13 +741,13 @@ Next is the search input. Here are the requirements of it:
 }
 
 .c-header[dir="rtl"] .c-input--search {
-  /* I replaced the original icon with a flipped one */
+  /* We replace the original icon with a flipped one. */
   background-image: url("data:image/svg+xml...");
   background-position: right 6px center;
 }
 ```
 
-Also, when typing into the search box, the text shouldn't go under the icon. To avoid that, padding should be added either on the right or left sides.
+Also, when the user types in the search box, the text shouldn’t slide under the icon. To avoid this, add padding on either the right or left side.
 
 ![](../../img/input-padding.png)
 
@@ -754,23 +757,23 @@ Also, when typing into the search box, the text shouldn't go under the icon. To 
 }
 ```
 
-Here is the current result for both LTR and RTL:
+Here is the result thus far for both LTR and RTL:
 ![](../../img/header-current-result.png)
 
-Next step, is the mobile menu. I will use a hamburger icon to represent the menu. The placement of the icon will change between LTR and RTL. The same applies for the direction of the translate animation.
+Next is the mobile menu. I will use a hamburger icon to indicate the menu. The placement of the icon will change between LTR and RTL. The same goes for the direction of the `translate` animation.
 ![](../../img/header-menu-mobile.png)
 
-Check out the [Demo](https://codepen.io/shadeed/pen/aa0c9f6c73fe62d206b674c52dc4426e?editors=0100) on CodePen
+Check out the [demo](https://codepen.io/shadeed/pen/aa0c9f6c73fe62d206b674c52dc4426e?editors=0100) on CodePen.
 
 ## Thanks
-Special thanks to my wife [Kholoud](https://twitter.com/kholoud840) for her continuous support and reading the guide multiple times. Thanks to both [Adebiyi Adedotun Lukman](https://twitter.com/AdebiyiAL) and [Šime Vidas](https://twitter.com/simevidas) for their amazing feedback.
+Special thanks to my wife, [Kholoud](https://twitter.com/kholoud840), for her continuous support and for reading the guide multiple times. Thanks to both [Adebiyi Adedotun Lukman](https://twitter.com/AdebiyiAL) and [Šime Vidas](https://twitter.com/simevidas) for their amazing feedback.
 
 ## Resources and Related Articles
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)
-- [Let's Talk About RTL](https://alfy.me/2014/07/26/lets-talk-about-rtl.html)
-- [Basic concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
-- [Basic Concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+- [Let’s Talk About RTL](https://alfy.me/2014/07/26/lets-talk-about-rtl.html)
+- [Basic Concepts of Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+- [Basic Concepts of Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - [Right-to-Left Development: Tips and Tricks](https://steelkiwi.com/blog/right-left-development-tips-and-tricks/)
-- [Arabic numerals](https://en.wikipedia.org/wiki/Arabic_numerals)
+- [Arabic Numerals](https://en.wikipedia.org/wiki/Arabic_numerals)
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>

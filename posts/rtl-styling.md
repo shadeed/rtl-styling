@@ -177,8 +177,6 @@ In the example below, the sidebar should be on the left and the `main` content o
 }
 ```
 
-![](../../img/ltr-rtl-grid.jpg)
-
 <p class="codepen" data-height="500" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="b15d4b4f81ce1b03ed9c1d99c560f64c" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Test 4">
   <span>See the Pen <a href="https://codepen.io/shadeed/pen/b15d4b4f81ce1b03ed9c1d99c560f64c">
   RTL Styling - Test 4</a> by Ahmad Shadeed (<a href="https://codepen.io/shadeed">@shadeed</a>)

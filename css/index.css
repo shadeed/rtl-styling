@@ -179,7 +179,7 @@ html {
 .post-content h5,
 .post-content h6 {
   color: var(--color-black);
-  font-family: "Heebo";
+  font-family: "Rubik";
   text-transform: capitalize;
 }
 .post-content h2 {
@@ -381,7 +381,6 @@ html {
   display: block;
   font-size: 0.85rem;
   line-height: 1.45;
-  overflow-y: scroll;
   border-radius: 4px;
 }
 @media (min-width: 1000px) {

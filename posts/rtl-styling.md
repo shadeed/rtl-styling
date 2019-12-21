@@ -235,7 +235,7 @@ The button “Done” is translated to “تم” in Arabic, which makes the but
 And here is a very similar example from Twitter:
 ![](../../img/word-length-twitter.png)
 
-Please note that the issues above on LinkedIn and Twitter have been spotted by them as of the time of writing (13 December 2019).
+Please note that the issues above on LinkedIn and Twitter have been spotted by yours truly as of the time of writing (13 December 2019).
 
 ### 4. Text Truncation
 I once worked on a project with mixed content, and I faced an issue related to text truncation in the wrong direction. Consider the following example.

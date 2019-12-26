@@ -19,9 +19,8 @@ body {
 }
 
 @media (min-width: 1000px) {
-  .wrapper {
-    display: grid;
-    grid-template-columns: 310px 1fr;
+  body.with-offset {
+    padding-left: 310px;
   }
 }
 
@@ -111,9 +110,11 @@ aside {
 
   @media (min-width: 1000px) {
     background: #eff4f7;
-    position: sticky;
+    position: fixed;
     top: 0;
-    height: 100vh;
+    left: 0;
+    bottom: 0;
+    width: 310px;
     overflow-y: scroll;
   }
 

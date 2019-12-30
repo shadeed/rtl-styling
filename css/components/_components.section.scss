@@ -3,6 +3,18 @@
     line-height: 1.5;
 
     &:nth-child(even) {
-        background-color: #eee;
+        background-color: #edf8f9;
     }
+
+    h2 {
+        color: #1d4c65;
+    }
+
+    p {
+        max-width: 70ch;
+    }
+}
+
+.c-list {
+    margin-left: 1.1rem;
 }

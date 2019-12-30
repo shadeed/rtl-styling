@@ -116,7 +116,7 @@ html {
   text-decoration: none;
 }
 .c-nav a:hover {
-  color: #3863d9;
+  color: #27739a;
 }
 .c-nav a.current {
   font-weight: bold;
@@ -132,7 +132,7 @@ html {
 }
 
 .direct-link {
-  color: #3863d9;
+  color: #27739a;
 }
 .direct-link:hover {
   opacity: 0.6;
@@ -171,12 +171,36 @@ html {
   margin-bottom: 1rem;
 }
 
+.c-link--light {
+  color: #fff;
+}
+
+.u-push-bottom {
+  margin-bottom: 1rem;
+}
+
 .c-section {
   padding: 2rem 0;
   line-height: 1.5;
 }
 .c-section:nth-child(even) {
-  background-color: #eee;
+  background-color: #edf8f9;
+}
+.c-section h2 {
+  color: #1d4c65;
+}
+.c-section p {
+  max-width: 70ch;
+}
+
+.c-list {
+  margin-left: 1.1rem;
+}
+
+.c-footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
 }
 
 .post-content {
@@ -217,7 +241,7 @@ html {
   margin-top: 3rem;
 }
 .post-content h1 {
-  color: #3863d9;
+  color: #27739a;
   margin-bottom: 0.5em;
 }
 .post-content h3 code,
@@ -744,7 +768,7 @@ body {
 
 aside h2 {
   margin: 1rem 0 0 1rem;
-  color: #3863d9;
+  color: #27739a;
   font-size: 20px;
 }
 @media (min-width: 1000px) {

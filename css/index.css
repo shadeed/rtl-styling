@@ -213,22 +213,9 @@ html {
   font-weight: 400;
   text-transform: none;
 }
-@media (prefers-color-scheme: dark) {
-  .post-content h3 code,
-.post-content h4 code {
-    background-color: #13182d;
-    border: 1px solid #13172d;
-  }
-}
 .post-content video {
   margin-bottom: 24px;
   max-width: 100%;
-}
-@media (prefers-color-scheme: dark) {
-  .post-content video {
-    opacity: 0.65;
-    filter: brightness(0.8) contrast(1.2);
-  }
 }
 .post-content video:hover {
   opacity: 1;
@@ -255,12 +242,6 @@ html {
   margin-bottom: 0 !important;
   vertical-align: middle;
 }
-@media (prefers-color-scheme: dark) {
-  .post-content p code {
-    background-color: #13182d;
-    border: 1px solid #13172d;
-  }
-}
 .post-content p a {
   color: var(--color-brand-primary);
 }
@@ -281,14 +262,6 @@ html {
 }
 .post-content blockquote p {
   margin-bottom: 0;
-}
-@media (prefers-color-scheme: dark) {
-  .post-content blockquote {
-    background: var(--color-brand-primary);
-  }
-  .post-content blockquote p {
-    color: var(--bg-color-page);
-  }
 }
 .post-content img {
   max-width: 100%;
@@ -311,13 +284,6 @@ html {
   border: 1px solid #e0e0e0;
   border-radius: 4px;
 }
-@media (prefers-color-scheme: dark) {
-  .post-content figure img {
-    border-color: #070a13;
-    box-shadow: none;
-    filter: brightness(0.8) contrast(1.2);
-  }
-}
 .post-content figure img:hover {
   filter: none;
 }
@@ -328,11 +294,6 @@ html {
   padding-top: 8px;
   color: #737373;
   text-align: center;
-}
-@media (prefers-color-scheme: dark) {
-  .post-content figcaption {
-    color: var(--color-black);
-  }
 }
 .post-content ul,
 .post-content ol {
@@ -357,20 +318,8 @@ html {
   border-radius: 4px;
   font-size: 14px;
 }
-@media (prefers-color-scheme: dark) {
-  .post-content ul code,
-.post-content ol code {
-    background-color: #13182d;
-    border: 1px solid #13172d;
-  }
-}
 .post-content .highlight {
   background: #f7f7f7;
-}
-@media (prefers-color-scheme: dark) {
-  .post-content .highlight {
-    background: #0c0f1d;
-  }
 }
 .post-content h3 + [class*=language-],
 .post-content h4 + [class*=language-] {
@@ -409,11 +358,6 @@ html {
   padding: 8px;
   border-radius: 5px;
   font-size: 16px;
-}
-@media (prefers-color-scheme: dark) {
-  .note.note {
-    color: var(--bg-color-page);
-  }
 }
 
 .post-demo {

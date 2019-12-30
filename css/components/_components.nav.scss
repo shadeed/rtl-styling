@@ -39,31 +39,13 @@
 	}
 }
 
-.c-button {
-	appearance: none;
-	background: #1d92d5;
-    color: #fff;
-    display: inline-block;
-    padding: 10px;
-    font-size: 16px;
-    border: 0;
-	border-radius: 100px;
-	text-decoration: none;
-	transition: 0.3s ease-out;
-
-	&:hover {
-		background: darken(#1d92d5, 5%);
-		box-shadow: 0 3px 15px 0 rgba(#000, 0.25);
-	}
-}
-
 .c-nav__open,
 .c-nav__close {
 	display: block;
 	width: 100%;
 	
 	@media (min-width: 1000px) {
-		display: none;
+		display: none !important;
 	}
 }
 

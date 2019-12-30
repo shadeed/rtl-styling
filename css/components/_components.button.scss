@@ -1,0 +1,32 @@
+.c-button {
+    appearance: none;
+    min-width: 140px;
+	background: #1d92d5;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    border: 0;
+	border-radius: 100px;
+	text-decoration: none;
+	transition: 0.3s ease-out;
+
+	&:hover {
+		background: darken(#1d92d5, 5%);
+		box-shadow: 0 3px 15px 0 rgba(#000, 0.25);
+	}
+}
+
+.c-button--outline {
+    padding: 7px 10px;
+    border: 2px solid #1d92d5;
+    background: transparent;
+    color: #222;
+
+    &:hover {
+        color: #fff;
+        background: #1d92d5;
+        box-shadow: none;
+	}
+}

@@ -8,7 +8,10 @@
 
 @import "elements/elements.page";
 
+@import "objects/objects.wrapper";
+
 @import "components/components.nav";
+@import "components/components.section";
 
 @import "scopes/scopes.article";
 
@@ -41,16 +44,8 @@ body {
 }
 
 .c-header--full {
-  color: #464d4e;
-  background: #fafafa url("../img/hero-bg.png");
-  min-height: 100vh;
-
   .c-header__byline {
-    margin-bottom: 1.5rem;
-
-    a {
-      color: inherit;
-    }
+    margin-bottom: 1rem;
   }
 
   .c-button {

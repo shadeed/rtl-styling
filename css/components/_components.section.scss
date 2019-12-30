@@ -1,0 +1,8 @@
+.c-section {
+    padding: 2rem 0;
+    line-height: 1.5;
+
+    &:nth-child(even) {
+        background-color: #eee;
+    }
+}

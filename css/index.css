@@ -96,6 +96,16 @@ html {
   }
 }
 
+.o-wrapper {
+  padding-left: 1em;
+  padding-right: 1em;
+  max-width: 820px;
+  margin: auto;
+}
+.o-wrapper > p {
+  max-width: 900px;
+}
+
 .c-nav {
   padding: 1rem 2rem 1rem;
   line-height: 1.65;
@@ -159,6 +169,14 @@ html {
 
 .c-nav__close {
   margin-bottom: 1rem;
+}
+
+.c-section {
+  padding: 2rem 0;
+  line-height: 1.5;
+}
+.c-section:nth-child(even) {
+  background-color: #eee;
 }
 
 .post-content {
@@ -678,16 +696,8 @@ body {
   }
 }
 
-.c-header--full {
-  color: #464d4e;
-  background: #fafafa url("../img/hero-bg.png");
-  min-height: 100vh;
-}
 .c-header--full .c-header__byline {
-  margin-bottom: 1.5rem;
-}
-.c-header--full .c-header__byline a {
-  color: inherit;
+  margin-bottom: 1rem;
 }
 .c-header--full .c-button {
   min-width: 160px;

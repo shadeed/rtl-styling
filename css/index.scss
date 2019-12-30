@@ -2,13 +2,21 @@
 
 @import "tools/all";
 
+@import "trumps/trumps.helpers";
+
 @import "generic/generic.box-sizing";
 @import "generic/generic.reset";
 @import "generic/generic.shared";
 
 @import "elements/elements.page";
 
+@import "objects/objects.wrapper";
+
 @import "components/components.nav";
+@import "components/components.button";
+@import "components/components.section";
+@import "components/components.list";
+@import "components/components.footer";
 
 @import "scopes/scopes.article";
 
@@ -41,16 +49,8 @@ body {
 }
 
 .c-header--full {
-  color: #464d4e;
-  background: #fafafa url("../img/hero-bg.png");
-  min-height: 100vh;
-
   .c-header__byline {
-    margin-bottom: 1.5rem;
-
-    a {
-      color: inherit;
-    }
+    margin-bottom: 1rem;
   }
 
   .c-button {

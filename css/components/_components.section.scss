@@ -1,0 +1,29 @@
+.c-section {
+    padding: 2rem 0;
+    line-height: 1.5;
+
+    h2 {
+        color: #1d4c65;
+        margin-bottom: 1rem;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 6px;
+            height: 36px;
+            background: #1c91d5;
+            margin-right: 8px;
+            border-radius: 6px;
+            opacity: 0.2;
+        }
+    }
+
+    p {
+        max-width: 70ch;
+    }
+
+    @media (min-width: 800px) {
+        padding: 4rem 0;
+    }
+}

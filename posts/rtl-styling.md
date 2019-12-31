@@ -534,6 +534,14 @@ When in doubt about the logical equivalent of a directional CSS property, use th
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
+Adding on that, Adrian created a demo that makes it easy to understand the difference between a logical and a directional CSS property.
+
+<p class="codepen" data-height="635" data-theme-id="23655" data-default-tab="result" data-user="aardrian" data-slug-hash="bGGxrvM" style="height: 635px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Logical Properties Mapping">
+  <span>See the Pen <a href="https://codepen.io/aardrian/pen/bGGxrvM">
+  Logical Properties Mapping</a> by Adrian Roselli (<a href="https://codepen.io/aardrian">@aardrian</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+
 ### Browser Support
 Browser support is quite good for `padding`, `margin`, and `text-align`. However, it’s not good for the border-radius properties. Here are the support tables from [Can I Use](https://caniuse.com/):
 

@@ -383,6 +383,34 @@ For some icons, though, it’s important to flip their direction in RTL layouts,
 
 ![](../../img/bidi-icons.png)
 
+However, there are always exceptions. As per the [material design](https://material.io/design/usability/bidirectionality.html#mirroring-elements) guidelines, if an icon represents an object that can be held with a person's right hand, then it doesn't need flipping. Here are some examples:
+
+![](../../img/bidi-icons-2.png)
+
+### Media Player Icons
+ I went back in time for about 15 years ago when my dad got me an MP3 player. It has a play button, and its direction points to the left.
+
+![](../../img/mp3-player.jpeg)
+
+Some icons are universal, and it doesn't require us to flip them. The reason is that because those playback buttons represent the direction of the tape being played, not the direction of the time. Here is how Spotify app looks in English and Arabic:
+
+![](../../img/spotify-icons.png)
+
+Notice that the playback icons are not flipped since they are universal icons. 
+
+### Messaging Apps
+In an [interesting](https://twitter.com/AndaristRake/status/1210508742225285120) Twitter discussion, I got asked about whether to flip the send icon of a messaging app or not. I did some research for Facebook Messenger, WhatsApp, and Twitter.
+
+![](../../img/message-icons-1.png)
+
+The send icon is flipped, and in my personal opinion, this is the correct thing to do as it feels more logical for me. Adding on that, the position of the send and "+" buttons should be flipped to make it more correct. See below mockup:
+
+![](../../img/message-icons-1-fixed.png)
+
+On the other hand, neither Facebook nor Twitter did flip the send icon.
+
+![](../../img/message-icons-2.png)
+
 ## Flipping Components
 While working on some components, I need a way to quickly flip them. In the Sketch app, I’ll copy a component and then flip it with the “flip” command. The same functionality is available in Adobe XD and Figma.
 
@@ -390,7 +418,7 @@ While working on some components, I need a way to quickly flip them. In the Sket
 
 To see what I mean, here is a GIF showing what I did after flipping a component.
 
-![](../../img/sketch-flip.gif) 
+![](../../img/sketch-flip.gif)
 
 ## RTL Design Considerations
 In this section, I’ll go through the most common components and show how they should look in RTL mode.

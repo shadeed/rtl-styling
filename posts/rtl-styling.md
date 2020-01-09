@@ -611,6 +611,8 @@ Now that you’ve got the idea, we can apply it to RTL styling as well. The desi
 
 Instead of giving the elements presentational names, like `.c-page-header__left` and `.c-page-header__right`, I’ve named them `.c-page-header__start` and `.c-page-header__end`. This is more future-proof and doesn’t assume that the website is only LTR or only RTL.
 
+## Bidirectional Scrollbars
+
 ## Automation Tools
 Great tools exist to make our job easier when we need to flip a design from LTR to RTL.
 

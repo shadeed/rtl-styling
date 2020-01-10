@@ -616,7 +616,7 @@ To my knowledge, the vertical scrollbar direction inside a container in CSS chan
 
 Consider the below figure.
 
-[..figure]
+![](../../img/scroll-bar.png)
 
 However, for operating systems, the browser scrollbar doesn't change and it stays on the right side no matter the OS language. But for the operating system itself, the scrollbar changes depending on its language.
 

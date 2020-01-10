@@ -618,7 +618,7 @@ Consider the below figure.
 
 ![](../../img/scroll-bar.png)
 
-However, for operating systems, the browser scrollbar doesn't change and it stays on the right side no matter the OS language. But for the operating system itself, the scrollbar changes depending on its language.
+However, for operating systems, the browser's scrollbar doesn't change and it stays on the right side no matter the OS language. But for the operating system itself, the scrollbar changes depending on its language.
 
 ## Automation Tools
 Great tools exist to make our job easier when we need to flip a design from LTR to RTL.

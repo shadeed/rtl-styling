@@ -803,6 +803,7 @@ body {
 }
 
 .c-header--full {
+  position: relative;
   color: #464d4e;
   background: #fafafa url("../img/hero-bg.png");
 }
@@ -815,6 +816,24 @@ body {
 .c-header--full .c-button {
   min-width: 160px;
   align-self: center;
+}
+
+.c-header__github {
+  margin-top: 2rem;
+}
+.c-header__github svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.2rem;
+}
+.c-header__github a {
+  color: #222;
+  text-decoration: none;
+}
+.c-header__github a:hover {
+  color: #1d92d5;
 }
 
 .c-header__title {

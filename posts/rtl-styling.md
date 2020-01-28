@@ -122,7 +122,7 @@ When `dir="rtl` is set on the element, the title is much clearer. That is, the s
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-## Font Declaration
+## Font Family
 In CSS, `font-family` works in a way that makes it easy to fall back to another font, in case a font didn't load. However, it turned out that if specific glyphs are not supported by the first font in the declaration, it will try to use the second font.
 
 According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family):

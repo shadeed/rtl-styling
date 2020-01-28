@@ -122,6 +122,27 @@ When `dir="rtl` is set on the element, the title is much clearer. That is, the s
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
+## Font Declaration
+In CSS, `font-family` works in a way that makes it easy to fall back to another font, in case a font didn't load. However, it turned out that if specific glyphs are not supported by the first font in the declaration, it will try to use the second font.
+
+According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family):
+> Font selection does not simply stop at the first font in the list that is on the user's system. Rather, font selection is done one character at a time, so that if an available font does not have a glyph for a needed character, the latter fonts are tried.
+
+[Omar Bourhaouta](https://codepen.io/bourhaouta/pen/GRgLqYL?editors=0100) made the following demo which proves the above concept:
+<p class="codepen" data-height="316" data-theme-id="dark" data-default-tab="css,result" data-user="bourhaouta" data-slug-hash="GRgLqYL" style="height: 316px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL font fallback">
+  <span>See the Pen <a href="https://codepen.io/bourhaouta/pen/GRgLqYL">
+  RTL font fallback</a> by omar bourhaouta (<a href="https://codepen.io/bourhaouta">@bourhaouta</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+
+```css
+body {
+    font-family: 'Roboto','Amiri', sans-serif;
+}
+```
+
+The Roboto font didn't recongnize the Arabic glyphs, so it falled back to the second font declaration.
+
 ## Flexbox Layout Module
 Flexbox is based on the writing mode of the document. The writing mode is used to specify how blocks are laid out on the page. For example, a Chinese website is laid out from top to bottom. The writing mode is for this purpose. In flexbox, items are distributed according to the writing mode of the document. The default value for `writing-mode` in English and Arabic is `horizontal-tb`.
 

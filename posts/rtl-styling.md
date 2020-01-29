@@ -122,6 +122,11 @@ When `dir="rtl` is set on the element, the title is much clearer. That is, the s
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
+## Handling Fonts
+Based on the design for both LTR and RTL layouts, there should be a specific font for each direction. Some fonts can work for multiple languages, which are great. However, brands and businesses tend to use a different font for RTL.
+
+To account for that, we should define a different font in the font settings of your project. See [Automation Tools](./#automation-tools) for more details.
+
 ## Font Family
 In CSS, `font-family` works in a way that makes it easy to fall back to another font, in case a font didn't load. However, it turned out that if specific glyphs are not supported by the first font in the declaration, it will try to use the second font.
 
@@ -485,6 +490,11 @@ For a horizontal card, the order of the image and the text should be flipped in 
 As you might expect, “close” and warning icons should flipped.
 
 ![](../../img/toasts.png)
+
+### Blockquotes
+The icon should be flipped as in the mockup below.
+
+![](../../img/blockquotes.png)
 
 ## CSS Logical Properties
 According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties):

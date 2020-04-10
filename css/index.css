@@ -212,17 +212,19 @@ html {
   margin-bottom: 0.5rem; }
 
 .c-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
   font-size: 0.85rem; }
-  @media (max-width: 700px) {
+  .c-footer p:first-child {
+    margin-bottom: 1rem; }
+  @media (min-width: 370px) {
     .c-footer {
-      justify-content: center; }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
       .c-footer p:first-child {
-        margin-bottom: 1rem; } }
+        margin-right: 1rem;
+        margin-bottom: 0; } }
   .c-footer a {
     color: #1773a8; }
     .c-footer a:hover {

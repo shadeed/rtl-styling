@@ -1,16 +1,20 @@
 .c-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
     font-size: 0.85rem;
 
-    @media (max-width: 700px) {
-        justify-content: center;
+    p:first-child {
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 370px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
         p:first-child {
-            margin-bottom: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 0;
         }
     }
 

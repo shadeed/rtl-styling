@@ -461,6 +461,12 @@ Some form inputs should remain left-aligned in RTL — for example, email and mo
 
 ![](../../img/form-inputs.png)
 
+It's worth noting that if the placeholder content is in Arabic or other RTL language, then the placeholder should be aligned to the right. Once the input is focused and the user starts typing, the alignment will be flipped to the left.
+
+![](../../img/form-inputs-2.png)
+
+Thanks to [YuanHao Chiang](https://github.com/shadeed/rtl-styling/issues/6) for letting me know about the use-case above.
+
 ### Breadcrumbs
 The arrows in the breadcrumb pattern should be flipped, too.
 

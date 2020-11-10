@@ -530,7 +530,7 @@ What if there was a way to add one `text-align` value that changes the direction
 
 By having this, the direction of `text-align` will be based on the page. [Demo](https://codepen.io/shadeed/pen/fb4e2f89ca23ab53f8b37112f027c85b?editors=1100)
 
-To make it easy to see the difference between `start` and `end`, I’ve made the mockup below. The `start` value is equal to left in LTR, and `end` is equal to right in RTL. The same applies for `end` as well.
+To make it easy to see the difference between `start` and `end`, I’ve made the mockup below. The `start` value is equal to left in LTR, and `start` is equal to right in RTL. The same applies for `end` as well.
 
 ![](../../img/start-end.png)
 

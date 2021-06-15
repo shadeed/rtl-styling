@@ -1,0 +1,236 @@
+---
+layout: layouts/base-ar.njk
+templateClass: tmpl-post
+---
+
+<header class="c-header">
+    <a class="c-link c-link--light u-push-bottom" href="/">Back to home</a>
+    <h1 class="c-header__title">RTL Styling 101</h1>
+    <p class="c-header__subline">
+    An extensive guide on how to style for RTL in CSS
+    </p>
+    <p class="c-header__byline"><a href="https://ishadeed.com/">By Ahmad Shadeed</a></p>
+</header>
+
+<div class="wrapper">
+    <aside>
+    <h2>Table of Contents</h2>
+    <nav class="c-nav">
+        <button class="c-button c-nav__close">Back to Reading</button>
+        <ul class="">
+        <li class="c-nav__item">
+            <a href="#introduction-to-rtl-styling"
+            >Introduction To RTL Styling
+            </a>
+        </li>
+        <li class="c-nav__item">
+            <a href="#basic-example-of-flipping-a-design"
+            >Basic Example Of Flipping A Design</a
+            >
+        </li>
+        <li class="c-nav__item">
+            <a href="#mixing-english-and-arabic-content-in-an-ltr-layout"
+            >Mixing English and Arabic Content</a
+            >
+        </li>
+        <li>
+            <a href="#handling-fonts">Handling Fonts</a>
+        </li>
+        <li>
+            <a href="#font-family">Font Family</a>
+        </li>
+        <li class="c-nav__item"><a href="#flexbox-layout-module">Flexbox Layout Module</a></li>
+        <li class="c-nav__item"><a href="#grid-layout-module">Grid Layout Module</a></li>
+        <li class="c-nav__item">
+            <a href="#common-mistakes-when-flipping-to-rtl"
+            >Common Mistakes</a
+            >
+            <ul>
+            <li><a href="#1.-letter-spacing">Letter Spacing</a></li>
+            <li><a href="#2.-text-transparency">Text Transparency</a></li>
+            <li>
+                <a href="#3.-differences-in-word-sizes-between-languages"
+                >Differences In Words Size Between Languages</a
+                >
+            </li>
+            <li>
+                <a href="#5.-picking-a-bad-rtl-font">Picking a Bad RTL Font</a>
+            </li>
+            <li>
+                <a href="#6.-mixing-hindi-and-arabic-numerals"
+                >Mixing Hindi and Arabic Numerals</a
+                >
+            </li>
+            </ul>
+        </li>
+        <li class="c-nav__item">
+            <a href="#common-things-that-might-not-work-for-rtl"
+            >Things That Might Not Work</a
+            >
+            <ul>
+            <li><a href="#1.-line-height">Line Height</a></li>
+            <li>
+                <a href="#2.-underlined-links">Underlined Links</a>
+                <ul>
+                <li><a href="#2.1.-text-decoration">Text Decoration</a></li>
+                <li><a href="#2.2.-box-shadow">Box Shadow</a></li>
+                </ul>
+            </li>
+            <li><a href="#3.-line-break">Line Break</a></li>
+            <li><a href="#4.-abbreviations">Abbreviations</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item"><a href="#bidirectional-icons">Bidirectional Icons</a></li>
+        <li class="c-nav__item"><a href="#flipping-components">Flipping Components</a></li>
+        <li class="c-nav__item">
+            <a href="#rtl-design-considerations">RTL Design Considerations</a>
+            <ul>
+            <li><a href="#button-icons">Button Icons</a></li>
+            <li><a href="#form-inputs">Form Inputs</a></li>
+            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+            <li><a href="#page-header">Page Header</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#tabs">Tabs</a></li>
+            <li><a href="#card">Card</a></li>
+            <li><a href="#toasts">Toasts</a></li>
+            <li><a href="#blockquotes">Blockquotes</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item">
+            <a href="#css-logical-properties">CSS Logical Properties </a>
+            <ul>
+            <li><a href="#logical-padding">Logical Padding</a></li>
+            <li><a href="#logical-margin">Logical Margin</a></li>
+            <li><a href="#logical-borders">Logical Borders</a></li>
+            <li><a href="#logical-border-radius">Logical Border Radius</a></li>
+            <li><a href="#logical-properties-cheat-sheet">Logical Properties Cheat Sheet</a></li>
+            <li><a href="#browser-support">Browser Support</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item"><a href="#css-naming-conventions">CSS Naming Conventions</a></li>
+        <li class="c-nav__item"><a href="#bidirectional-vertical-scrollbars">Bidirectional Vertical Scrollbars</a></li>
+        <li class="c-nav__item">
+            <a href="#automation-tools">Automation Tools</a>
+            <ul>
+            <li><a href="#1.-bi-app-sass">Bi-App-Sass</a></li>
+            <li><a href="#2.-rtlcss">RTLCSS</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item">
+            <a href="#practical-examples">Practical Examples</a>
+            <ul>
+            <li><a href="#website-header">Website Header</a></li>
+            </ul>
+        </li>
+        
+        </ul>
+    </nav>
+    <button class="c-button c-nav__open">Table of Contents</button>
+    </aside>
+    <main>
+    <div class="content post-content">
+        <style>
+            #carbonads {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+            Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+
+            #carbonads {
+            display: flex;
+            max-width: 330px;
+            margin: 0 auto;
+            background-color: hsl(0, 0%, 98%);
+            box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, .1);
+            }
+
+            #carbonads a {
+            color: inherit;
+            text-decoration: none;
+            }
+
+            #carbonads a:hover {
+            color: inherit;
+            }
+
+            #carbonads span {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            }
+
+            #carbonads .carbon-wrap {
+            display: flex;
+            }
+
+            .carbon-img {
+            display: block;
+            margin: 0;
+            line-height: 1;
+            }
+
+            .carbon-img img {
+            display: block;
+            margin: 0 !important;
+            border: 0;
+            border-radius: 0;
+            }
+
+            .carbon-text {
+            font-size: 13px;
+            padding: 10px;
+            line-height: 1.5;
+            text-align: left;
+            }
+
+            .carbon-poweredby {
+            display: block;
+            padding: 8px 10px;
+            background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            font-weight: 600;
+            font-size: 9px;
+            line-height: 1;
+            }
+        </style>
+        <div>
+            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7ITK7E&placement=wwwrtlstylingcom" id="_carbonads_js"></script>
+        </div>
+
+        <div class="coffee" style="padding: 2rem;
+		background: #f7f7f7;
+		margin-bottom: 2rem;
+        margin-top: 2rem;
+		border-radius: 5px;
+		line-height: 1.4;">
+			Do you like my content? You can support and <a href="https://www.buymeacoffee.com/EmbDfQoF6" style="color: #3863d9;">buy me a coffee</a>. Thank you so much!
+		</div>
+        
+        {{ content | safe }}
+
+        <div class="coffee" style="padding: 2rem;
+		background: #f7f7f7;
+		margin-bottom: 2rem;
+        margin-top: 2rem;
+		border-radius: 5px;
+		line-height: 1.4;">
+			Do you like my content? You can support and <a href="https://www.buymeacoffee.com/EmbDfQoF6" style="color: #3863d9;">buy me a coffee</a>. Thank you so much!
+		</div>
+    </div>
+    </main>
+</div>
+
+<script>
+    let openNav = document.querySelector('.c-nav__open');
+    let closeNav = document.querySelector('.c-nav__close');
+    let nav = document.querySelector('.c-nav');
+
+    openNav.addEventListener('click', function(){
+        nav.classList.add('is-active');
+    });
+
+    closeNav.addEventListener('click', function(){
+        nav.classList.remove('is-active');
+    });
+</script>

@@ -28,7 +28,7 @@ body {
 
 @media (min-width: 1000px) {
   body.with-offset {
-    padding-left: 310px;
+    padding-inline-start: 310px;
   }
 }
 
@@ -172,6 +172,13 @@ aside {
         display: block;
       }
     }
+  }
+}
+
+html[dir="rtl"] aside {
+  @media (min-width: 1000px) {
+    left: auto;
+    right: 0;
   }
 }
 

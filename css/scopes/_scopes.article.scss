@@ -156,7 +156,7 @@
   ul,
   ol {
     @include font-size(18px);
-    padding-left: $global-spacing-unit-large;
+    padding-inline-start: $global-spacing-unit-large;
     margin-bottom: $global-spacing-unit;
     color: var(--color-black);
 

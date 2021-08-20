@@ -153,7 +153,7 @@ html {
   color: red;
 }
 .c-nav li ul {
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
 }
 
 .c-nav__item li a,
@@ -426,7 +426,7 @@ html {
 .post-content ol {
   font-size: 1.125rem;
   line-height: 1.7777777778;
-  padding-left: 32px;
+  padding-inline-start: 32px;
   margin-bottom: 16px;
   color: var(--color-black);
 }
@@ -878,7 +878,8 @@ body {
 }
 
 aside h2 {
-  margin: 1rem 0 0 1rem;
+  margin-top: 1rem;
+  margin-inline-start: 1rem;
   color: #27739a;
   font-size: 20px;
 }
@@ -924,6 +925,19 @@ aside h2 {
     left: auto;
     right: 0;
   }
+}
+
+html[dir=rtl] .direct-link {
+  float: right;
+  margin-left: 0.5rem;
+}
+
+.switch-version {
+  margin-top: 1.5rem;
+}
+.switch-version a {
+  color: #fff;
+  font-size: 1.1rem;
 }
 
 .content {

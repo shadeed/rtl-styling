@@ -132,7 +132,8 @@ aside {
   
 
   h2 {
-    margin: 1rem 0 0 1rem;
+    margin-top: 1rem;
+    margin-inline-start: 1rem;
     color: $color-brand-primary;
     font-size: 20px;
   }
@@ -179,6 +180,22 @@ html[dir="rtl"] aside {
   @media (min-width: 1000px) {
     left: auto;
     right: 0;
+  }
+}
+
+html[dir="rtl"] {
+  .direct-link {
+    float: right;
+    margin-left: 0.5rem;
+  }
+}
+
+.switch-version {
+  margin-top: 1.5rem;
+
+  a {
+    color: #fff;
+    font-size: 1.1rem;
   }
 }
 

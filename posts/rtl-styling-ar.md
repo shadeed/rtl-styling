@@ -857,6 +857,9 @@ se website](../../img/caniuse-css-logical-2.png)
 ## شكر
 شكر خاص لزوجتي [خلود] (https://twitter.com/kholoud840) على دعمها المستمر وقراءتها الدليل عدة مرات. شكرًا لكل من [Adebiyi Adedotun Lukman]‏(https://twitter.com/AdebiyiAL)‏ و [Šime Vidas]‏ (https://twitter.com/simevidas) على تعليقاتهما الرائعة.
 
+## الترجمة العربية
+كل الشكر إلى المبدع [واثق الشويطر](https://www.watheq.xyz/) على ترجمة الدليل.
+
 ## مصادر ومقالات ذات صلة
 - [Right to Left (The Mirror World)](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)
 - [Let’s Talk About RTL](https://alfy.me/2014/07/26/lets-talk-about-rtl.html)

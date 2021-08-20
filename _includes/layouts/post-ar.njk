@@ -1,0 +1,238 @@
+---
+layout: layouts/base-ar.njk
+templateClass: tmpl-post
+---
+
+<header class="c-header">
+    <a class="c-link c-link--light u-push-bottom" href="/">العودة للرئيسية</a>
+    <h1 class="c-header__title">RTL Styling 101</h1>
+    <p class="c-header__subline">
+    دليل مكثف لكيفية كتابة CSS للمواقع من اليمين إلى اليسار.
+    </p>
+    <p class="c-header__byline"><a href="https://ishadeed.com/">بواسطة أحمد شديد</a></p>
+
+    <p class="switch-version"><a href="/posts/rtl-styling/">English Version</a></p>
+</header>
+
+<div class="wrapper">
+    <aside>
+    <h2>جدول المحتويات</h2>
+    <nav class="c-nav">
+        <button class="c-button c-nav__close">Back to Reading</button>
+        <ul class="">
+        <li class="c-nav__item">
+            <a href="#%D9%85%D9%82%D8%AF%D9%85%D8%A9-%D9%84%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D8%A8%D8%A7%D8%AA%D8%AC%D8%A7%D9%87-%D8%A7%D9%84%D9%8A%D9%85%D9%8A%D9%86-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%8A%D8%B3%D8%A7%D8%B1-(rtl)"
+            >مقدمة للتصميم باتجاه اليمين إلى اليسار (RTL)
+            </a>
+        </li>
+        <li class="c-nav__item">
+            <a href="#%D9%85%D8%AB%D8%A7%D9%84-%D8%A8%D8%B3%D9%8A%D8%B7-%D8%B9%D9%84%D9%89-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%A7%D8%AA%D8%AC%D8%A7%D9%87-%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85"
+            >مثال بسيط على انقلاب اتجاه التصميم</a
+            >
+        </li>
+        <li class="c-nav__item">
+            <a href="#%D9%86%D8%B5-%D8%A5%D9%86%D8%AC%D9%84%D9%8A%D8%B2%D9%8A-%D9%88%D8%B9%D8%B1%D8%A8%D9%8A-%D9%81%D9%8A-%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D9%8A%D8%AA%D8%AC%D9%87-%D9%85%D9%86-%D8%A7%D9%84%D9%8A%D8%B3%D8%A7%D8%B1-(ltr)"
+            >نص إنجليزي وعربي في تخطيط يتجه من اليسار (LTR)</a
+            >
+        </li>
+        <li>
+            <a href="#%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%85%D9%84-%D9%85%D8%B9-%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%B7">التعامل مع الخطوط</a>
+        </li>
+        <li>
+            <a href="#%D9%86%D9%88%D8%B9-%D8%A7%D9%84%D8%AE%D8%B7">نوع الخط</a>
+        </li>
+        <li class="c-nav__item"><a href="#f%D9%88%D8%AD%D8%AF%D8%A9-%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-flexbox">وحدة تخطيط Flexbox</a></li>
+        <li class="c-nav__item"><a href="#%D9%88%D8%AD%D8%AF%D8%A9-%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-grid">وحدة تخطيط Grid</a></li>
+        <li class="c-nav__item">
+            <a href="#%D8%A7%D9%84%D8%A3%D8%AE%D8%B7%D8%A7%D8%A1-%D8%A7%D9%84%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9-%D8%B9%D9%86%D8%AF-%D9%82%D9%84%D8%A8-%D8%A7%D9%84%D8%A7%D8%AA%D8%AC%D8%A7%D9%87-%D8%A5%D9%84%D9%89-%D8%A7%D8%AA%D8%AC%D8%A7%D9%87-%D8%A7%D9%84%D9%8A%D9%85%D9%8A%D9%86-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%8A%D8%B3%D8%A7%D8%B1-(rtl)"
+            >الأخطاء الشائعة عند قلب الاتجاه إلى اتجاه اليمين إلى اليسار (RTL)</a
+            >
+            <ul>
+            <li><a href="#1.-%D8%A7%D9%84%D8%AA%D8%A8%D8%A7%D8%B9%D8%AF-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D8%B1%D9%81">التباعد بين الأحرف</a></li>
+            <li><a href="#2.-%D8%B4%D9%81%D8%A7%D9%81%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D8%B5">شفافية النص</a></li>
+            <li>
+                <a href="#3.-%D9%81%D8%B1%D9%88%D9%82%D8%A7%D8%AA-%D8%A8%D9%8A%D9%86-%D8%A3%D8%AD%D8%AC%D8%A7%D9%85-%D8%A7%D9%84%D9%83%D9%84%D9%85%D8%A7%D8%AA-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D9%84%D8%BA%D8%A7%D8%AA"
+                >فروقات بين أحجام الكلمات بين اللغات</a
+                >
+            </li>
+            <li>
+                <a href="#5.-%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1-%D8%AE%D8%B7-%D8%B3%D9%8A%D8%A1-%D9%84%D8%A7-%D9%8A%D8%AA%D9%86%D8%A7%D8%B3%D8%A8-%D9%85%D8%B9-%D9%84%D8%BA%D8%A9-%D8%AA%D8%AA%D8%AC%D9%87-%D9%85%D9%86-%D8%A7%D9%84%D9%8A%D9%85%D9%8A%D9%86-(rtl)">اختيار خط سيء لا يتناسب مع لغة تتجه من اليمين (RTL)</a>
+            </li>
+            <li>
+                <a href="#6.-%D8%AE%D9%84%D8%B7-%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D8%A7%D9%85-%D8%A7%D9%84%D9%87%D9%86%D8%AF%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9"
+                >خلط الأرقام الهندية والعربية</a
+                >
+            </li>
+            </ul>
+        </li>
+        <li class="c-nav__item">
+            <a href="#%D8%A3%D9%85%D9%88%D8%B1-%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9-%D9%82%D8%AF-%D9%84%D8%A7-%D8%AA%D8%B9%D9%85%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D8%A7%D8%AA%D8%AC%D8%A7%D9%87-%D9%85%D9%86-%D8%A7%D9%84%D9%8A%D9%85%D9%8A%D9%86-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%8A%D8%B3%D8%A7%D8%B1"
+            >أمور شائعة قد لا تعمل في الاتجاه من اليمين إلى اليسار</a
+            >
+            <ul>
+            <li><a href="#1.-%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%A7%D9%84%D8%AE%D8%B7">ارتفاع الخط</a></li>
+            <li>
+                <a href="#2.-%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D9%85%D8%B3%D8%B7%D9%91%D8%B1%D8%A9">الروابط المسطّرة</a>
+                <ul>
+                <li><a href="#2.1-%D8%AA%D8%AC%D9%85%D9%8A%D9%84-%D8%A7%D9%84%D9%86%D8%B5">تجميل النص</a></li>
+                <li><a href="#2.2-%D8%A7%D9%84%D8%B8%D9%84">الظل</a></li>
+                </ul>
+            </li>
+            <li><a href="#3.-%D8%A7%D9%86%D9%82%D8%B7%D8%A7%D8%B9-%D8%A7%D9%84%D8%AE%D8%B7">انقطاع الخط</a></li>
+            <li><a href="#4.-%D8%A7%D8%AE%D8%AA%D8%B5%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%84%D9%85%D8%A7%D8%AA">اختصارات الكلمات</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item"><a href="#%D8%A7%D9%84%D8%A3%D9%8A%D9%82%D9%88%D9%86%D8%A7%D8%AA-%D8%AB%D9%86%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AA%D8%AC%D8%A7%D9%87">الأيقونات ثنائية الاتجاه</a></li>
+        <li class="c-nav__item"><a href="#%D9%82%D9%84%D8%A8-%D8%A7%D8%AA%D8%AC%D8%A7%D9%87-%D8%B9%D9%86%D8%A7%D8%B5%D8%B1-%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85">قلب اتجاه عناصر واجهة الاستخدام</a></li>
+        <li class="c-nav__item">
+            <a href="#%D8%A3%D9%85%D9%88%D8%B1-%D8%AA%D8%AA%D8%B7%D9%84%D8%A8-%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D8%B9%D8%A7%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D9%84%D8%A7%D8%AA%D8%AC%D8%A7%D9%87-%D8%A7%D9%84%D9%8A%D9%85%D9%8A%D9%86-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%8A%D8%B3%D8%A7%D8%B1">أمور تتطلب المراعاة في التصميم لاتجاه اليمين إلى اليسار</a>
+            <ul>
+            <li><a href="#%D8%A3%D9%8A%D9%82%D9%88%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D8%B2%D8%B1%D8%A7%D8%B1">أيقونات الأزرار</a></li>
+            <li><a href="#%D9%85%D8%AF%D8%AE%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D9%85%D9%88%D8%B0%D8%AC-(form)">مدخلات النموذج (Form)</a></li>
+            <li><a href="#%D9%82%D9%88%D8%A7%D8%A6%D9%85-%D8%A7%D9%84%D8%AA%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AA%D9%81%D8%B5%D9%8A%D9%84%D9%8A%D8%A9-(breadcrumbs)">قوائم التنقل التفصيلية (Breadcrumbs)</a></li>
+            <li><a href="#%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B3%D8%A9-%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%8A%D8%A9-%D9%84%D9%84%D8%B5%D9%81%D8%AD%D8%A9">الترويسة العلوية للصفحة</a></li>
+            <li><a href="#%D8%A7%D9%84%D8%AC%D8%AF%D8%A7%D9%88%D9%84">الجداول</a></li>
+            <li><a href="#%D8%A7%D9%84%D8%AA%D8%A8%D9%88%D9%8A%D8%A8%D8%A7%D8%AA">التبويبات</a></li>
+            <li><a href="#%D8%A7%D9%84%D8%A8%D8%B7%D8%A7%D9%82%D8%A9">البطاقة</a></li>
+            <li><a href="#%D8%B9%D9%86%D8%A7%D8%B5%D8%B1-%D8%A7%D9%84%D8%AA%D8%AD%D8%B0%D9%8A%D8%B1">عناصر التحذير</a></li>
+            <li><a href="#%D9%83%D8%AA%D9%84-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%A8%D8%A7%D8%B3%D8%A7%D8%AA">كتل الاقتباسات</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item">
+            <a href="#%D8%AE%D8%B5%D8%A7%D8%A6%D8%B5-css-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D9%8A%D8%A9">خصائص CSS المنطقية</a>
+            <ul>
+            <li><a href="#%D8%A7%D9%84%D8%AD%D8%A7%D8%B4%D9%8A%D8%A9-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D9%8A%D8%A9">الحاشية الداخلية المنطقية</a></li>
+            <li><a href="#%D8%A7%D9%84%D9%87%D9%88%D8%A7%D9%85%D8%B4-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D9%8A%D8%A9">الهوامش الخارجية المنطقية</a></li>
+            <li><a href="#%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D9%8A%D8%A9">الحدود المنطقية</a></li>
+            <li><a href="#%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D8%A7%D9%84%D9%86%D8%A7%D8%B9%D9%85%D8%A9-(%D8%A7%D9%84%D9%85%D8%AF%D9%88%D9%91%D8%B1%D8%A9)-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D9%8A%D8%A9">الحدود الناعمة (المدوّرة) المنطقية</a></li>
+            <li><a href="#%D9%88%D8%B1%D9%82%D8%A9-%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%D8%A9-(cheat-sheet)-%D9%84%D9%84%D8%AE%D8%B5%D8%A7%D8%A6%D8%B5-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D9%8A%D8%A9">ورقة مرجعية (Cheat Sheet) للخصائص المنطقية</a></li>
+            <li><a href="#%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD">دعم المتصفح</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item"><a href="#%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD%D8%A7%D8%AA-%D8%AA%D8%B3%D9%85%D9%8A%D8%A9-css">اصطلاحات تسمية CSS</a></li>
+        <li class="c-nav__item"><a href="#%D8%A3%D8%B4%D8%B1%D8%B7%D8%A9-%D8%AA%D9%85%D8%B1%D9%8A%D8%B1-(scrollbars)-%D8%B9%D9%85%D9%88%D8%AF%D9%8A%D8%A9-%D8%AB%D9%86%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AA%D8%AC%D8%A7%D9%87">أشرطة تمرير (Scrollbars) عمودية ثنائية الاتجاه</a></li>
+        <li class="c-nav__item">
+            <a href="#%D8%A3%D8%AF%D9%88%D8%A7%D8%AA-%D8%A3%D8%AA%D9%85%D8%AA%D8%A9">أدوات أتمتة</a>
+            <ul>
+            <li><a href="#1.-%D8%A3%D8%AF%D8%A7%D8%A9-bi-app-sass">أداة Bi-App-Sass</a></li>
+            <li><a href="#2.-%D8%A3%D8%AF%D8%A7%D8%A9-rtlcss">أداة RTLCSS</a></li>
+            </ul>
+        </li>
+        <li class="c-nav__item">
+            <a href="#%D8%A3%D9%85%D8%AB%D9%84%D8%A9-%D8%B9%D9%85%D9%84%D9%8A%D8%A9">أمثلة عملية</a>
+            <ul>
+            <li><a href="#%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B3%D8%A9-%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%8A%D8%A9-%D9%84%D9%84%D9%85%D9%88%D9%82%D8%B9">الترويسة العلوية للموقع</a></li>
+            </ul>
+        </li>
+        
+        </ul>
+    </nav>
+    <button class="c-button c-nav__open">Table of Contents</button>
+    </aside>
+    <main>
+    <div class="content post-content">
+        <style>
+            #carbonads {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+            Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+
+            #carbonads {
+            display: flex;
+            max-width: 330px;
+            margin: 0 auto;
+            background-color: hsl(0, 0%, 98%);
+            box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, .1);
+            }
+
+            #carbonads a {
+            color: inherit;
+            text-decoration: none;
+            }
+
+            #carbonads a:hover {
+            color: inherit;
+            }
+
+            #carbonads span {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            }
+
+            #carbonads .carbon-wrap {
+            display: flex;
+            }
+
+            .carbon-img {
+            display: block;
+            margin: 0;
+            line-height: 1;
+            }
+
+            .carbon-img img {
+            display: block;
+            margin: 0 !important;
+            border: 0;
+            border-radius: 0;
+            }
+
+            .carbon-text {
+            font-size: 13px;
+            padding: 10px;
+            line-height: 1.5;
+            text-align: left;
+            }
+
+            .carbon-poweredby {
+            display: block;
+            padding: 8px 10px;
+            background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            font-weight: 600;
+            font-size: 9px;
+            line-height: 1;
+            }
+        </style>
+        <div>
+            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7ITK7E&placement=wwwrtlstylingcom" id="_carbonads_js"></script>
+        </div>
+
+        <div class="coffee" style="padding: 2rem;
+		background: #f7f7f7;
+		margin-bottom: 2rem;
+        margin-top: 2rem;
+		border-radius: 5px;
+		line-height: 1.4;">
+			Do you like my content? You can support and <a href="https://www.buymeacoffee.com/EmbDfQoF6" style="color: #3863d9;">buy me a coffee</a>. Thank you so much!
+		</div>
+        
+        {{ content | safe }}
+
+        <div class="coffee" style="padding: 2rem;
+		background: #f7f7f7;
+		margin-bottom: 2rem;
+        margin-top: 2rem;
+		border-radius: 5px;
+		line-height: 1.4;">
+			Do you like my content? You can support and <a href="https://www.buymeacoffee.com/EmbDfQoF6" style="color: #3863d9;">buy me a coffee</a>. Thank you so much!
+		</div>
+    </div>
+    </main>
+</div>
+
+<script>
+    let openNav = document.querySelector('.c-nav__open');
+    let closeNav = document.querySelector('.c-nav__close');
+    let nav = document.querySelector('.c-nav');
+
+    openNav.addEventListener('click', function(){
+        nav.classList.add('is-active');
+    });
+
+    closeNav.addEventListener('click', function(){
+        nav.classList.remove('is-active');
+    });
+</script>

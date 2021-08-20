@@ -931,6 +931,9 @@ html[dir=rtl] .direct-link {
   float: right;
   margin-left: 0.5rem;
 }
+html[dir=rtl] body {
+  font-family: "Arial";
+}
 
 .switch-version {
   margin-top: 1.5rem;

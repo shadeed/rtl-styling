@@ -202,6 +202,7 @@
 
   pre[class*="language-"] {
     margin-bottom: 1.5rem;
+    direction: ltr;
   }
 
   @media (min-width: 720px) {

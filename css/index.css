@@ -466,6 +466,7 @@ html {
 }
 .post-content pre[class*=language-] {
   margin-bottom: 1.5rem;
+  direction: ltr;
 }
 @media (min-width: 720px) {
   .post-content [class*=language-] code {
@@ -932,7 +933,7 @@ html[dir=rtl] .direct-link {
   margin-left: 0.5rem;
 }
 html[dir=rtl] body {
-  font-family: "Arial";
+  font-family: "IBM Plex Sans Arabic", sans-serif;
 }
 
 .switch-version {

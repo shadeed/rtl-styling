@@ -1,6 +1,9 @@
-# RTL Styling 101
+# RTL设计和开发指南
 
-An extensive guide on how to style for RTL in CSS
+一个关于如何利用CSS适配RTL的指南（中文版）
 
 ## Credits
 - [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog)
+
+## 译者
+[李大毛没有猫](https://darmau.design)

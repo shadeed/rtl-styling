@@ -27,7 +27,7 @@ CSS默认的文档方向为从左到右。如果你检查你的浏览器并检�
 
 值得一提的是，有一个`dir="auto"`属性，它会根据解析的内容自动切换方向。根据[HTML规范](https://www.w3.org/TR/2011/WD-html5-author-20110809/global-attributes.html)的说法：
 
-> 作者应该只在不确定文本方向的时候使用这个值，而且也没有更好的服务端解析方法。
+> 作者应该只在不确定文本方向，同时也没有更好的服务端解析方法​的时候使用这个值
 
 <p class="codepen" data-height="428" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="7662a5f048c5a6a1bbdb89905327c965" style="height: 428px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Basic Example">
   <span>See the Pen <a href="https://codepen.io/shadeed/pen/7662a5f048c5a6a1bbdb89905327c965">
@@ -192,10 +192,8 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 </p>
 
 ## Grid 布局
-Like flexbox, the grid layout module depends on the writing mode of the document, which gives us the same benefit that we get from using flexbox.
 和flexbox相似，grid布局取决于文档的writing mode，这为我们提供了和flexbox一样的好处。
 
-In the example below, the sidebar should be on the left and the `main` content on the right when the direction is LTR. For RTL, it’s vice versa. When we use CSS grid, the flipping will be done automatically according to the page’s direction.
 下方的案例中，当页面方向为LTR时，侧边栏应该在左侧，`main`内容在右侧。对于RTL，它们是相反的。当我们使用grid布局时，根据页面的方向，翻转将自动完成。
 
 ```html
@@ -261,7 +259,6 @@ In the example below, the sidebar should be on the left and the `main` content o
 
 ![](../../img/website-header-translation.png)
 
-You might be wondering why I’m talking about differences in word sizes, since this is normal and expected. Consider the following real-life example from LinkedIn.
 你也许会想知道为什么我要谈论单词长度的差异，因为对于不同语言来说这是很正常和意料之中的。请看下面LinkedIn的例子。
 
 ![](../../img/word-length-linkedin.png) 
@@ -315,7 +312,6 @@ You might be wondering why I’m talking about differences in word sizes, since 
 - 印度: ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩
 - 阿拉伯: 0 1 2 3 4 5 6 7 8 9
 
-The numbers used in English are inherited from the Arabic ones: “0, 1, 2, 3, 4, 5, 6, 7, 8, 9”. Content that has numbers should be consistent, either Hindi or Arabic numerals.
 英语中用到的数字是从阿拉伯数字中继承来的：“0, 1, 2, 3, 4, 5, 6, 7, 8, 9”。内容中的数字应该是一致的，要么是印度数字，要么是阿拉伯数字。
 
 根据维基百科：

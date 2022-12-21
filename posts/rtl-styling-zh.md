@@ -11,6 +11,7 @@ layout: layouts/post.njk
 译注：下文将用LTR指代主流的从左到右的文字布局，用RTL指代阿拉伯文、希伯来文等从右到左的文字布局。
 
 ## RTL文字适配介绍
+
 CSS默认的文档方向为从左到右。如果你检查你的浏览器并检查浏览器的默认样式，你会发现`html`元素的`dir`（或者“direction”）属性默认值为`ltr`。下面是一个简单的例子来展示LTR和RTL布局的区别。
 
 ```html
@@ -95,6 +96,7 @@ CSS默认的文档方向为从左到右。如果你检查你的浏览器并检�
 </p>
 
 ## 在LRT布局中混排英文和阿拉伯文
+
 在LTR布局中混排英文和阿拉伯文，会是什么效果？嗯，结果看起来会有点奇怪。
 
 ![](../../img/ltr-mix-1.jpg)
@@ -128,16 +130,17 @@ CSS默认的文档方向为从左到右。如果你检查你的浏览器并检�
 </p>
 
 ## 字体处理
+
 根据LTR和RTL布局的设计，每个方向都应该有一个特定的字体。有些字体可以用于多种语言，这很好。然而，品牌和企业倾向于为RTL使用不同的字体。
 
 为了实现这点，我们应该为项目设置不同的字体。更多细节请参见[自动化工具](./#自动化工具)。
 
 ## Font Family
+
 根据CSS的规则，`font-family`会在字体加载失败的时候自动回退到另一个字体。然而，如果第一个字体中没有相应的字形，它就会尝试使用第二个字体。
 
 根据 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-family):
 > 字体的选定不是在发现用户计算机上安装的列表中的第一个字体时停止。相反，对字体的选择是逐字进行的。也就是说即使某个字符周围都在某个字体中可以显示，但该字符在当前的字体文件中没有适合的图形，那么会继续尝试列表中靠后的字体。
-
 
 [Omar Bourhaouta](https://codepen.io/bourhaouta/pen/GRgLqYL?editors=0100) 做了个demo来证明上面的说法：
 <p class="codepen" data-height="316" data-theme-id="dark" data-default-tab="css,result" data-user="bourhaouta" data-slug-hash="GRgLqYL" style="height: 316px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL font fallback">
@@ -155,6 +158,7 @@ body {
 Roboto字体没有识别到阿拉伯文的字形，所以它回退到了第二个字体。
 
 ## Flexbox 布局
+
 Flexbox 基于文档的writing mode。writing mode用于指定block在页面上的布局方式。例如，中文网站是从上到下布局的。writing mode就是为了这个目的而存在的。在flexbox中，条目根据文档的writing mode进行分配。英语和阿拉伯语的 `writing-mode` 的默认值是 `horizontal-tb`。
 
 根据 [Mozilla Developer Network](https://developer.mozilla.org/zh-CN/docs/Web/CSS/writing-mode) (MDN), `horizontal-tb` 意思是：
@@ -192,6 +196,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 </p>
 
 ## Grid 布局
+
 和flexbox相似，grid布局取决于文档的writing mode，这为我们提供了和flexbox一样的好处。
 
 下方的案例中，当页面方向为LTR时，侧边栏应该在左侧，`main`内容在右侧。对于RTL，它们是相反的。当我们使用grid布局时，根据页面的方向，翻转将自动完成。
@@ -218,9 +223,11 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 </p>
 
 ## 转换到RTL布局时的常见错误
+
 非阿语使用者经常会犯一些容易规避的常见错误。
 
 ### 1. Letter-Spacing 字间距
+
 在英语中为文字添加`letter-spacing`是很常见的，字体排印中也叫tracking。请看下面的英文的例子，看起来没问题。
 
 ![](../../img/letter-spacing.jpg)
@@ -238,6 +245,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 </p>
 
 ### 2. 文本透明度
+
 为文字设置一个透明度很常见，比如为了让文字显得次要。这在英语中是可行的。然而当内容是阿拉伯文时，会导致一个奇怪的渲染问题：
 
 ![](../../img/rtl-transparency.jpg)
@@ -251,6 +259,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 </p>
 
 ### 3. 不同语言中单词的长度
+
 有时候当一个网站被翻译到阿拉伯文时，元素的大小会因为翻译后的单词变大或变小而发生变化。请看下面的例子，我模拟了Smashing Magazine网站的导航栏。
 
 ![](../../img/website-header.png) 
@@ -272,6 +281,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 请注意，上面LinkedIn和Twitter的问题是在我写这篇文章的时候发现的（2019年12月13日）。
 
 ### 4. 文字溢出
+
 我曾为一个项目处理混排文字，我遇到了一个关于文字溢出方向的问题。请看下面的例子。
 
 ```html
@@ -294,6 +304,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 </p>
 
 ### 5. 选择不合适的RTL字体
+
 设计RTL布局的界面并不意味着你可以选一个系统字体然后再也不管了。字体必须仔细挑选，以确保良好的可读性。以Twitter为例：
 
 ![](../../img/en-vs-ar.png)
@@ -308,6 +319,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 ![](../../img/en-vs-ar-2.png)
 
 ### 6. 阿拉伯文数字混排
+
 阿拉伯语中有两种写数字的形式：
 - 印度: ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩
 - 阿拉伯: 0 1 2 3 4 5 6 7 8 9
@@ -323,6 +335,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 ## RTL中可能不起作用的常见问题
 
 ### 1. 行高
+
 为RTL布局设置一个不同的字体很常见。在本例中，测试一行和多行的内容。在下面的例子中，阿拉伯文的行间距比英文的小，即使它们的`line-height`都是一样的。
 
 ![](../../img/line-height-1.png)
@@ -342,6 +355,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 在第一张图中，阿拉伯文的一个标点符号被截断了。这个标点符号叫做“kasra”，它对于正确阅读单词是很重要的。在下一张图中，我已经修复了行高，现在它就完整地显示出来了。
 
 ### 2. 超链接的下划线
+
 默认的文字下划线在阿拉伯文中看起来不太好。因为这关系到阿拉伯文中字母和单词的书写方式。看下面的图：
 ![](../../img/rtl-underline-1.png)
 
@@ -442,6 +456,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 需要注意的是，播放按钮没有被翻转，因为它们是普世的图标。
 
 ### 信息应用
+
 在一个[有意思](https://twitter.com/AndaristRake/status/1210508742225285120)的Twitter讨论中，我被问到是否需要翻转信息应用中的发送图标。我做了一些针对Facebook Messenger，WhatsApp和Twitter的研究。
 
 ![](../../img/message-icons-1.png)
@@ -455,6 +470,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 ![](../../img/message-icons-2.png)
 
 ## 组件的翻转
+
 在修改一些组件的时候，我需要有个快速的方法翻转它们。在Sketch应用中，我会复制一个组件，然后使用“flip”命令翻转它。同样的功能在Adobe XD和Figma中也是可用的。
 
 ![](../../img/sketch-flip.png)
@@ -464,14 +480,17 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 ![](../../img/sketch-flip.gif)
 
 ## RTL设计中的注意事项
+
 在本节中，我将介绍最常见的组件，并展示它们在RTL模式下应该如何显示。
 
 ### 按钮图标
+
 在按钮中增加一个图标以展开一个菜单展示出更多操作是很常见的做法。在本例中，图标的位置应该在RTL布局中翻转。
 
 ![](../../img/button-icons.png)
 
 ### 表单输入
+
 一些输入项在RTL布局中应该保持左对齐，例如邮箱和手机号码输入。
 
 ![](../../img/form-inputs.png)
@@ -483,41 +502,49 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 感谢[YuanHao Chiang](https://github.com/shadeed/rtl-styling/issues/6)提醒我上面的情况。
 
 ### 面包屑
+
 面包屑中的箭头方向也应该翻转。
 
 ![](../../img/breadcrumbs.png) 
 
 ### 页头
+
 页面头部组件包含开始和结束两个部分。在RTL布局中，这两个部分都应该翻转。
 
 ![](../../img/page-header.png)
 
 ### 表格
+
 表格应该翻转。
 
 ![](../../img/tables.png)
 
 ### 标签页
+
 在LTR布局中，标签页的图标应该在标签的左边。在RTL布局中，这些图标就应该在右边。
 
 ![](../../img/tabs.png)
 
 ### 卡片
+
 对于一个水平的卡片，在RTL布局中，图片和文字的顺序应该翻转。
 
 ![](../../img/card.png)
 
 ### Toasts
+
 你也许知道了，关闭和警告图标应该在左边。
 
 ![](../../img/toasts.png)
 
 ### 引用
+
 代表引用的图标应该在右边，如果LTR的设计中是在左边的话。
 
 ![](../../img/blockquotes.png)
 
 ## CSS 逻辑属性
+
 根据 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Logical_Properties):
 > CSS 逻辑属性与值是 CSS 的一个模块，其引入的属性与值能做从逻辑角度控制布局，而不是从物理、方向或维度来控制。
 
@@ -557,6 +584,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 现在你已经对它的工作原理有了基本的了解，让我们来探索更多的CSS逻辑属性的例子和用例。
 
 ### 逻辑内间距 padding
+
 ![](../../img/css-logical-padding.png)
 
 假设我们有一个搜索输入框，右边有一个搜索图标。我们应该在左右两边都添加内间距。右边的内间距要大一点，以防止文本掉到搜索图标下面。
@@ -585,6 +613,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 ```
 
 ### 逻辑边框
+
 ![](../../img/css-logical-border.png)
 
 很多时候你可能需要增加一个边框来表示导航元素是当前的。在上面的设计中，每个导航元素的左侧都有一个边框。我们如何让它成为逻辑的呢？
@@ -600,6 +629,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 ```
 
 ### 逻辑边框半径 border-radius
+
 ![](../../img/css-logical-border-radius.png)
 
 在上面的设计中，导航元素的背景只有右上角和右下角有边框半径。为了实现这一点，我们可以这样写：
@@ -617,6 +647,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 ```
 
 ### 逻辑属性对照表
+
 当你不清楚哪个CSS属性可以用逻辑属性时，可以参考下面的对照表。请注意，这个表只包含了LTR和RTL布局中等同的属性。我是根据Adrian Roselli的[文章](https://adrianroselli.com/2019/11/css-logical-properties.html)制作的。
 
 <p class="codepen" data-height="674" data-theme-id="dark" data-default-tab="result" data-user="shadeed" data-slug-hash="2981e62691e67452d9f282a5351d7c79" style="height: 674px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Logical Properties">
@@ -634,9 +665,11 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 </p>
 
 ### 浏览器支持
+
 译注：在2022年12月的时间点，上述提到的属性均已有很好的兼容性。本段略过不翻。
 
 ## CSS 命名规则
+
 通常情况下，避免给CSS类命名时使用与元素直接相关的名称。使用可以提取为可重用组件的名称。请看：
 
 ```html
@@ -660,6 +693,7 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 与其给元素命名为`.c-page-header__left`和`.c-page-header__right`，我更倾向于使用`.c-page-header__start`和`.c-page-header__end`。这样做更加合理，因为它认定网站只能是LTR或RTL。
 
 ## 垂直滚动条
+
 在我的认知中，CSS中容器内的垂直滚动条位置取决于页面方向。对于RTL布局，滚动条在左侧，而对于LTR，它在右侧。
 
 请看下面的例子：
@@ -669,9 +703,11 @@ Flexbox 基于文档的writing mode。writing mode用于指定block在页面上�
 不过对于操作系统来说，浏览器的滚动条不会改变，无论操作系统的语言是什么，它都会停留在右侧。但是对于操作系统本身来说，滚动条会根据其语言而改变。
 
 ## 自动化工具
+
 有一些很好的工具可以帮助我们更好地将设计从LTR转换为RTL。
 
 ### 1. Bi-App-Sass
+
 Anas Nakawa的[Bi-App-Sass](https://github.com/anasnakawa/bi-app-sass）可以让你只写一次样式表，然后它会将其编译为两个不同的样式表，一个用于LTR，另一个用于RTL。
 
 这个工具适用于大型项目。生成结果将是为每个语言适配的多个样式表。比如：
@@ -705,12 +741,15 @@ Anas Nakawa的[Bi-App-Sass](https://github.com/anasnakawa/bi-app-sass）可以�
 但是请注意，这个项目的最后一次提交是七年前（2015年11月）。
 
 ### 2. RTLCSS
+
 Mohammad Younes的[RTLCSS](https://rtlcss.com/)是一个将LTR样式表转换为RTL样式表的框架。
 
 这个工具的不同之处在于它只在CSS文件的构建版本上运行。例如，如果你有一个包含50多个Sass组件的项目，RTLCSS将非常有用，它可以解析编译后的CSS文件并创建一个RTL版本。
 
 ## 实际案例练习
+
 ### Website Header
+
 我设计了一个特殊的布局，以向你展示我是如何处理和思考将其翻转为RTL布局的。
 
 ![](../../img/blog.png)
@@ -859,10 +898,11 @@ Mohammad Younes的[RTLCSS](https://rtlcss.com/)是一个将LTR样式表转换为
 在 [这里](https://codepen.io/shadeed/pen/aa0c9f6c73fe62d206b674c52dc4426e?editors=0100) 查看完整的代码。
 
 ## 致谢
-Special thanks to my wife, [Kholoud](https://twitter.com/kholoud840), for her continuous support and for reading the guide multiple times. Thanks to both [Adebiyi Adedotun Lukman](https://twitter.com/AdebiyiAL) and [Šime Vidas](https://twitter.com/simevidas) for their amazing feedback.
+
 特别要感谢我的妻子[Khouloud](https://twitter.com/kholoud840)，她持续不断的支持和多次审阅本指南。感谢[Adebiyi Adedotun Lukman](https://twitter.com/AdebiyiAL)和[Šime Vidas](https://twitter.com/simevidas)提供的宝贵意见。
 
 ## 参考链接
+
 - [(Right to Left (The Mirror World](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)
 - [Let’s Talk About RTL](https://alfy.me/2014/07/26/lets-talk-about-rtl.html)
 - [Basic Concepts of Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)

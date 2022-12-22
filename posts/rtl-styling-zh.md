@@ -12,11 +12,11 @@ layout: layouts/post.njk
 
 ## RTL 文字适配介绍
 
-CSS 默认的文档方向为从左到右。如果你检查你的浏览器并检查浏览器的默认样式，你会发现`html`元素的`dir`（或者“direction”）属性默认值为`ltr`。下面是一个简单的例子来展示 LTR 和 RTL 布局的区别。
+CSS 默认的文档方向为从左到右。如果你看一下你浏览器的默认样式，你会发现`html`元素的`dir`（或者“direction”）属性默认值为`ltr`。下面是一个简单的例子来展示 LTR 和 RTL 布局的区别。
 
 ![](../../img/rtl-intro-1.png)
 
-注意看 RTL 部分，文字阅读方向是从右到左，和 LTR 相反。幸运的是，浏览器已经为这个简单的例子做了所有的工作。要切换文档的方向，你只需要在根元素上添加`dir`属性。
+注意看 RTL 部分，文字阅读方向是从右到左，和 LTR 相反。幸运的是，浏览器为这种情形做了大量的工作。要切换文档的方向，你只需要在根元素上添加`dir`属性。
 
 ```html
 <html dir="rtl">
@@ -82,7 +82,7 @@ CSS 默认的文档方向为从左到右。如果你检查你的浏览器并检�
 当我们添加`dir="rtl"`后，结果如下所示：
 ![](../../img/rtl-intro-ltr-2.jpg)
 
-所有元素除了图片都被翻转了。这是因为图片设置了`float: left`和`margin-right: 16px`。为了修复这个问题，我们需要覆盖这些样式：
+除了图片所有元素都被翻转了。这是因为图片设置了`float: left`和`margin-right: 16px`。为了修复这个问题，我们需要覆盖这些样式：
 
 ```css
 .media[dir="rtl] img {
@@ -104,11 +104,11 @@ CSS 默认的文档方向为从左到右。如果你检查你的浏览器并检�
 
 ![](../../img/ltr-mix-1.jpg)
 
-浏览器没有正确显示标题。对于阿拉伯语的读者来说，这个标题会让人感到难以阅读，除非你是作者本人。标题应该按照下图所示的顺序阅读。
+浏览器没有正确显示标题。对于阿拉伯语的读者来说，这个标题会让人感到难以阅读。标题应该按照下图所示的顺序阅读。
 
 ![](../../img/ltr-mix-2.jpg)
 
-为了避免此类问题，尽可能地设置好文字的正确方向。一旦在元素上设置了`dir="rtl"`，它就会按照预期的方式显示。
+为了避免此类问题，应该尽可能地设置好文字的正确方向。一旦在元素上设置了`dir="rtl"`，它就会按照预期的方式显示。
 
 ![](../../img/ltr-mix-3.jpg)
 
@@ -118,7 +118,7 @@ CSS 默认的文档方向为从左到右。如果你检查你的浏览器并检�
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-当标题更长的时候，情况会变的更复杂。下面，我把标题变长了一点，然而结果并不是预期中的。我在图片中加了数字以显示标题的正确顺序。
+当标题更长的时候，情况会变的更复杂。下面，我把标题变长了一点，然而结果并不在意料中。我在图片中加了数字以显示标题的正确顺序。
 
 ![](../../img/ltr-mix-4.jpg)
 
@@ -134,7 +134,7 @@ CSS 默认的文档方向为从左到右。如果你检查你的浏览器并检�
 
 ## 字体处理
 
-根据 LTR 和 RTL 布局的设计，每个方向都应该有一个特定的字体。有些字体可以用于多种语言，这很好。然而，品牌和企业倾向于为 RTL 使用不同的字体。
+根据 LTR 和 RTL 布局的设计，每个文档方向都应该有一个特定的字体。有些字体支持多种语言，这当然很好。然而，品牌和企业倾向于为 RTL 使用不同的字体。
 
 为了实现这点，我们应该为项目设置不同的字体。更多细节请参见[自动化工具](./#自动化工具)。
 
@@ -146,7 +146,7 @@ CSS 默认的文档方向为从左到右。如果你检查你的浏览器并检�
 
 > 字体的选定不是在发现用户计算机上安装的列表中的第一个字体时停止。相反，对字体的选择是逐字进行的。也就是说即使某个字符周围都在某个字体中可以显示，但该字符在当前的字体文件中没有适合的图形，那么会继续尝试列表中靠后的字体。
 
-[Omar Bourhaouta](https://codepen.io/bourhaouta/pen/GRgLqYL?editors=0100) 做了个 demo 来证明上面的说法：
+[Omar Bourhaouta](https://codepen.io/bourhaouta/pen/GRgLqYL?editors=0100) 做了个 demo 来佐证上面的说法：
 
 <p class="codepen" data-height="316" data-theme-id="dark" data-default-tab="css,result" data-user="bourhaouta" data-slug-hash="GRgLqYL" style="height: 316px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL font fallback">
   <span>See the Pen <a href="https://codepen.io/bourhaouta/pen/GRgLqYL">
@@ -164,13 +164,13 @@ Roboto 字体没有识别到阿拉伯文的字形，所以它回退到了第二�
 
 ## Flexbox 布局
 
-Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面上的布局方式。例如，中文网站是从上到下布局的。writing mode 就是为了这个目的而存在的。在 flexbox 中，条目根据文档的 writing mode 进行分配。英语和阿拉伯语的 `writing-mode` 的默认值是 `horizontal-tb`。
+Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面上的布局方式。就像中文网站是从上到下布局的。writing mode 就是为了这个目的而存在的。在 flexbox 中，条目根据文档的 writing mode 进行分配。英语和阿拉伯语的 `writing-mode` 的默认值是 `horizontal-tb`。
 
 根据 [Mozilla Developer Network](https://developer.mozilla.org/zh-CN/docs/Web/CSS/writing-mode) (MDN), `horizontal-tb` 意思是：
 
 > 对于左对齐（ltr）文本，内容从左到右水平流动。对于右对齐（rtl）文本，内容从右到左水平流动。下一水平行位于上一行下方。
 
-当页面的方向切换到 RTL，flexbox 会相应地翻转它的项目。这是一个显著的好处！下面的插图显示了 flexbox 轴是如何根据文档方向翻转的。
+当页面的方向切换到 RTL，flexbox 会相应地翻转它的项目。这是一个明显的好处！下面的插图显示了 flexbox 轴是如何根据文档方向翻转的。
 
 ![](../../img/flexbox-axis.jpg)
 
@@ -236,11 +236,11 @@ Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面
 
 ![](../../img/letter-spacing.jpg)
 
-然而当相同的字间距添加到阿拉伯文时，看起来就会很奇怪。看下面的真实案例。
+然而当相同的字间距添加到阿拉伯文时，看起来就会很奇怪。见下图：
 
 ![](../../img/letter-spacing-rtl.jpg)
 
-注意，在增加了`letter-spacing`的内容中，每个单词的字母看起来都不相连。这是不对的。阿拉伯字母应该是连续的，而保留英语的`letter-spacing`会破坏这一点。在多语言混排中，请确保为阿拉伯字母设置`letter-spacing: 0`。
+在增加了`letter-spacing`的内容中，每个单词的字母看起来都不相连。这是不对的。阿拉伯单词应该是连续的，而用于英文的`letter-spacing`会破坏这一点。在多语言混排中，请确保为阿拉伯字母设置`letter-spacing: 0`。
 
 <p class="codepen" data-height="397" data-theme-id="light" data-default-tab="result" data-user="shadeed" data-slug-hash="29b1428dac29ced513adc482b22e7372" style="height: 397px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RTL Styling - Test 6">
   <span>See the Pen <a href="https://codepen.io/shadeed/pen/29b1428dac29ced513adc482b22e7372">
@@ -264,33 +264,35 @@ Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面
 
 ### 3. 不同语言中单词的长度
 
-有时候当一个网站被翻译到阿拉伯文时，元素的大小会因为翻译后的单词变大或变小而发生变化。请看下面的例子，我模拟了 Smashing Magazine 网站的导航栏。
+有时候当一个网站翻译到阿拉伯文时，元素的大小会因为翻译后的单词变大或变小而发生变化。请看下面的例子，我模拟了 Smashing Magazine 网站的导航栏。
 
 ![](../../img/website-header.png)
 
-在阿拉伯语版中，一些单词的大小与英语几乎相同，一些相同，一些更大。为了更清楚地说明这一点，下面是每个单词及其阿拉伯语翻译的对比。
+在阿语版本中，一些单词的大小与英语几乎相同，一些相同，一些更大。为了更清楚地说明这一点，下面是每个单词及其阿拉伯语翻译的对比。
 
 ![](../../img/website-header-translation.png)
 
-你也许会想知道为什么我要谈论单词长度的差异，因为对于不同语言来说这是很正常和意料之中的。请看下面 LinkedIn 的例子。
+你也许会想知道为什么我要谈论单词长度的差异，相同含义的单词在不同语言中长度不一是很正常的。请看下面 LinkedIn 的例子。
 
 ![](../../img/word-length-linkedin.png)
 
 按钮“done”在阿拉伯语中被翻译为“تم”，这使得按钮变得太小，看起来很奇怪。最好为按钮设置一个`min-width`来考虑这种情况。我在浏览器的开发者工具中添加了这个，以显示它应该是什么样子的：
+
 ![](../../img/word-length-linkedin-2.png)
 
 这里是 Twitter 的一个类似的例子：
+
 ![](../../img/word-length-twitter.png)
 
 请注意，上面 LinkedIn 和 Twitter 的问题是在我写这篇文章的时候发现的（2019 年 12 月 13 日）。
 
 ### 4. 文字溢出
 
-我曾为一个项目处理混排文字，我遇到了一个关于文字溢出方向的问题。请看下面的例子。
+我曾为一个项目处理混排文字，我遇到了一个关于文字溢出的问题。如下图：
 
 ![](../../img/text-trun.png)
 
-英语的溢出处理是错误的。省略号应该在元素的末尾，而不是开头。为了解决这个问题，可以在元素上设置`dir="auto"`属性，然后浏览器会自动解析内容并决定`dir`是什么。
+英语的溢出处理是错误的。省略号应该在句子的末尾，而不是开头。为了解决这个问题，可以在元素上设置`dir="auto"`属性，然后浏览器会自动解析内容并决定`dir`是什么。
 
 ```html
 <p dir="auto">
@@ -329,24 +331,24 @@ Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面
 
 阿拉伯语中有两种写数字的形式：
 
-- 印度: ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩
-- 阿拉伯: 0 1 2 3 4 5 6 7 8 9
+- 阿拉伯文数字: ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩
+- 主流的“阿拉伯数字”: 0 1 2 3 4 5 6 7 8 9
 
-英语中用到的数字是从阿拉伯数字中继承来的：“0, 1, 2, 3, 4, 5, 6, 7, 8, 9”。内容中的数字应该是一致的，要么是印度数字，要么是阿拉伯数字。
+英语中用到的数字是从阿拉伯数字中继承来的：“0, 1, 2, 3, 4, 5, 6, 7, 8, 9”。内容中的数字应该是一致的，要么是阿拉伯文数字，要么是阿拉伯数字。
 
 根据维基百科：
 
-> 这些数字之所以在欧洲、美洲更常被称为“阿拉伯数字”，是因为在 10 世纪，来自北非的阿拉伯人引入了这些数字到欧洲，当时他们使用的是来自利比亚、摩洛哥的数字。
+> 这些数字在欧洲和美洲更常被称为“阿拉伯数字”的原因是，它们在 10 世纪由北非的讲阿拉伯语的人引入欧洲。
 
-下图中的数字是印度数字和阿拉伯数字混排的。这看起来不一致，应该统一使用一种数字。
+下图中的数字是阿拉伯文数字和阿拉伯数字混排的。看起来不一致，应该统一使用一种数字。
 
 ![](../../img/ar-numbers.png)
 
-## RTL 中可能不起作用的常见问题
+## RTL 中可能不起作用的常见情形
 
 ### 1. 行高
 
-为 RTL 布局设置一个不同的字体很常见。在本例中，测试一行和多行的内容。在下面的例子中，阿拉伯文的行间距比英文的小，即使它们的`line-height`都是一样的。
+为 RTL 布局设置一个不同的字体很常见。在下面的例子中，阿拉伯文的行间距比英文的小，即使它们的`line-height`都是一样的。
 
 ![](../../img/line-height-1.png)
 
@@ -366,14 +368,15 @@ Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面
 
 ### 2. 超链接的下划线
 
-默认的文字下划线在阿拉伯文中看起来不太好。因为这关系到阿拉伯文中字母和单词的书写方式。看下面的图：
+默认的文字下划线在阿拉伯文中并不太适用。因为这关系到阿拉伯文中字母和单词的书写方式。看下面的图：
+
 ![](../../img/rtl-underline-1.png)
 
 我用红圈标记除了一些奇怪的地方。下划线覆盖了字母的点。还是不清楚？看下面的图：
 
 ![](../../img/rtl-underline-2.png)
 
-红圈中的点被下划线分割。这使得文字难以阅读。解决方案是使用 CSS 自定义下划线。
+红圈中的点被下划线分割。这使得文字难以阅读。解决方案是用 CSS 自定义下划线。
 
 #### 2.1. Text Decoration
 
@@ -388,7 +391,7 @@ Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-在本文写作的时候，它在 Safari 中不被支持，旧版 Edge 中也不被支持（新版 Edge 支持）。下面是 Safari 中的效果：
+在本文写作的时候，它在 Safari 中还不支持，旧版 Edge 中也不支持（新版 Edge 支持）。下面是 Safari 中的效果：
 
 ![](../../img/text-deco-safari.png)
 
@@ -666,11 +669,11 @@ Flexbox 基于文档的 writing mode。writing mode 用于指定 block 在页面
 
 ### 浏览器支持
 
-译注：在 2022 年 12 月的时间点，上述提到的属性均已有很好的兼容性。本段略过不翻。
+译注：在 2022 年 12 月，上述提到的属性均已有很好的兼容性。本段略过不翻。
 
 ## CSS 命名规则
 
-通常情况下，避免给 CSS 类命名时使用与元素直接相关的名称。使用可以提取为可重用组件的名称。请看：
+通常情况下，避免给 CSS 类命名时使用与元素直接相关的名称。使用可以提取为可重用组件的名称：
 
 ```html
 <div class="c-section">

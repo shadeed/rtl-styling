@@ -9,3 +9,4 @@ node_modules/
 *.sass.map
 *.scss.map
 
+.DS_Store

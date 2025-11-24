@@ -853,7 +853,7 @@ body {
 شكر خاص لزوجتي [خلود](https://twitter.com/kholoud840) على دعمها المستمر وقراءتها الدليل عدة مرات. شكرًا لكل من[Adebiyi Adedotun Lukman](https://twitter.com/AdebiyiAL) و[Šime Vidas](https://twitter.com/simevidas) على تعليقاتهما الرائعة.
 
 ## الترجمة العربية
-كل الشكر للمبرمج [واثق الشويطر](https://www.watheq.xyz/) على ترجمة الدليل والشكر موصول للأستاذ [جميل بيلوني](https://academy.hsoub.com/profile/65605-%D8%AC%D9%85%D9%8A%D9%84-%D8%A8%D9%8A%D9%84%D9%88%D9%86%D9%8A/) على التدقيق والمراجعة اللغوية والتحريرية للترجمة.
+كل الشكر للمبرمج [واثق الشويطر](https://iwatheq.com) على ترجمة الدليل والشكر موصول للأستاذ [جميل بيلوني](https://academy.hsoub.com/profile/65605-%D8%AC%D9%85%D9%8A%D9%84-%D8%A8%D9%8A%D9%84%D9%88%D9%86%D9%8A/) على التدقيق والمراجعة اللغوية والتحريرية للترجمة.
 
 ## مصادر ومقالات ذات صلة
 - [Right to Left (The Mirror World)](https://labs.spotify.com/2019/04/15/right-to-left-the-mirror-world/)
